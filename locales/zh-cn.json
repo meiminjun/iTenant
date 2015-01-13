@@ -1,0 +1,78 @@
+{
+    "months" : {
+        "1"  : "1月",
+        "2"  : "2月",
+        "3"  : "3月",
+        "4"  : "4月",
+        "5"  : "5月",
+        "6"  : "6月",
+        "7"  : "7月",
+        "8"  : "8月",
+        "9"  : "9月",
+        "10" : "10月",
+        "11" : "11月",
+        "12" : "12月"
+    },
+    "settingview" : {
+    	"title" : "设置",
+    	"fieldset" : {
+	    	"title" : "语言",
+	    	"instructions" : "设置语言"
+    	}
+    },
+    "pullRefresh" : {
+    	"loadingText" : "加载中...",
+    	"lastUpdatedText" : "最后更新时间",
+    	"pullRefreshText" : "下拉刷新...",
+    	"releaseRefreshText" : "松开即刷新..."
+    },
+    "listPaging" : {
+    	"loadMoreText" : "加载更多...",
+		"noMoreRecordsText" : "暂无更多记录"
+    },
+    "numericalPicker" : {
+	    "doneButtonText" : "确定",
+    	"cancelButtonText" : "取消"
+    },
+    "actionSheet" :{
+        "cancel" : "取消",
+        "deleteDraft" : "删除草稿",
+        "Photograph" : "拍照",
+        "Album" : "从相册中选择"
+    },
+    "tapeSheet" :{
+        "tapeBtnText" : "开始录音",
+        "playAudioText" : "播放",
+        "title" : "录音最长时间20秒"
+    },
+    "workOrderDetails" : {
+    	"title" : "Detailed Information"
+    },
+    "workOrderDetailsChild" : {
+    	"unitText" : "Unit Information",
+    	"unitNameLabel" : "Name",
+    	"businessTypeLabel" : "Business Type",
+    	"areaLabel" : "Area",
+    	"oContactPersonLabel" : "OPS Contact Person",
+    	"fContactPersonLabel" : "Finance Contact Person",
+    	"floorPlanLabel" : "Floor Plan",
+    	"tenantText" : "Tenant Information",
+    	"tenantNameLabel" : "Name",
+    	"contactNumberLabel" : "Contact Number",
+    	"mobileNumberLabel" : "Mobile Number",
+    	"emailLabel" : "Email",
+    	"addressLabel" : "Address"
+    },
+    "modifyView" : {
+    	"title" : "Modify",
+    	"sendText" : "Send",
+    	"placeHolder" : "Comments"
+    },
+    "signatureView" : {
+    	"title" : "Signature",
+    	"saveText" : "Save"
+    },
+    "postilImgList" : {
+    	"title" : "Floor Plan"
+    }
+}

@@ -1,0 +1,46 @@
+{
+	"rows" : [
+			{
+                "id": "1",
+                "marketName":"深圳",
+                "adress":"深圳南山區科技園",
+                "count":"4",
+                "imageUrl": "images/Kraftwerk.jpg"
+            },
+            {
+                "id": "2",
+                "marketName":"廣州",
+                "adress":"深圳南山區科技園",
+                "count":"4",
+                "imageUrl": "images/Kraftwerk.jpg"
+            },
+             {
+                "id": "3",
+                "marketName":"西安",
+                "adress":"西安兵馬俑",
+                "count":"2",
+                "imageUrl": "images/Kraftwerk.jpg"
+            },
+             {
+                "id": "4",
+                "marketName":"九江",
+                "adress":"九江廬山區",
+                "count":"2",
+                "imageUrl": "images/Kraftwerk.jpg"
+            },
+             {
+                "id": "5",
+                "marketName":"南昌",
+                "adress":"南昌火车站",
+                "count":"11",
+                "imageUrl": "images/Kraftwerk.jpg"
+            },
+             {
+                "id": "6",
+                "marketName":"赣州",
+                "adress":"赣州地区",
+                "count":"9",
+                "imageUrl": "images/Kraftwerk.jpg"
+            }
+	]
+}
