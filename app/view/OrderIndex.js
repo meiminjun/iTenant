@@ -23,7 +23,7 @@ Ext.define('iTenants.view.OrderIndex', {
                 xtype: 'titlebar',
                 cls: 'titlebar',
                 docked: 'top',
-                title: 'Krautrock',
+                title: 'Tampines Mall',
                 items: [
                     {
                         xtype: 'button',

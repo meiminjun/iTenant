@@ -6,14 +6,14 @@
 Ext.define('iTenants.view.DefectView', {
 	extend: 'Ext.Container',
 	requires: [
-		'Ext.Toolbar',
+	    'Ext.TitleBar',
 		'Ext.form.FieldSet',
 		'Ext.field.TextArea',
 		'Ext.Button'
 	],
 	config: {
 		items: [{
-			xtype: 'toolbar',
+			xtype: 'titlebar',
 			docked: 'top',
 			cls: 'customToolBar',
 			title: 'Defect Found',
@@ -27,18 +27,23 @@ Ext.define('iTenants.view.DefectView', {
 					navCtr.popToPrev();
 				}
 			}, {
-				xtype: 'button',
-				ui: 'plain',
-				text: 'Reply',
-				cls: 'replyBtnCls',
-				docked: 'right',
+				xtype : 'button',
+	        	itemId : 'orderReplySendBtn',
+	        	ui : 'customTopBtn',
+	        	align : 'right',
 				text: 'Send'
 			}]
 		}, {
 			xtype: 'fieldset',
 			baseCls: "defectTextarea",
 			items: [{
-				xtype: 'textareafield'
+				xtype : 'textareafield',
+				itemId : 'DefectComments',
+				style : 'border: 1px solid #ccc; font-size:15px;',
+				minHeight : '3.5em',
+				padding : '5px',
+				maxRows : 2,
+				placeHolder	: 'Comments'
 			}]
 		}, {
 			xtype: 'container',

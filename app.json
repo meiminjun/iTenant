@@ -48,7 +48,10 @@
             "x-bootstrap": true
         },
         {
-        	"path": "app/util/cordova-2.5.0.js"
+        	"path": "app/util/phoneGap/cordova.js"
+        },
+        {
+        	"path": "app/util/phoneGap/cordova_plugins.js"
         },
         {
         	"path": "app/util/Global.js"
@@ -122,7 +125,8 @@
         "resources/icons",
         "resources/startup",
         "resources/data",
-        "locales"
+        "locales",
+        "app/util/phoneGap/plugins"
     ],
 
     /**

@@ -302,5 +302,33 @@ Ext.define('iTenants.controller.FileUploadCtr', {
 	                }
 	            });
 	    }
-    }
+    },
+	/**
+	 * 检查点缩略图查看图片
+	 * 
+	 * @param isBase64
+	 * @param pathStr
+	 * @param currentIndex
+	 * @param hasDomain
+	 */
+	viewPic : function(isBase64, pathStr, currentIndex,hasDomain) {
+		navCtr.pushToNext('iTenants.view.CarouselView', function(view) {
+			var pathArr = pathStr.toString().split('|'),subItem = [],src;
+			Ext.Array.each(pathArr, function(path) {
+				if(hasDomain && hasDomain === true){
+					src = path;
+				}else{
+					src = isBase64 ? "data:image/png;base64," + path : Global.domain+"/"+decodeURIComponent(path);
+				}
+				console.log(src);
+				subItem.push({
+					xtype : 'imageviewer',
+					imageSrc : src,
+					style : 'background : rgba(53, 49, 49,1)'
+				});
+			});
+			view.down('carousel').setItems(subItem);
+			view.down('carousel').setActiveItem(currentIndex - 1);
+		});
+	}
 });

@@ -14,6 +14,8 @@ Ext.define('iTenants.model.MarketList', {
 			name:'PassedPercent'
 		},{
 			name:'ProjectImage'
+		},{
+			name:'num'
 		}]
 	}
 });

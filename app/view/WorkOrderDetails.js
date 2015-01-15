@@ -38,17 +38,6 @@ Ext.define('iTenants.view.WorkOrderDetails', {
 					    handler : function(e){
 					    	navCtr.popToPrev();
 					    }
-			        },
-			        {
-			        	// 工单回复测试
-			        	xtype : 'button',
-			        	itemId : 'orderReplyBtn',
-			        	ui : 'customTopBtn',
-			        	text : 'orderReply',
-			        	align : 'right',
-			        	handler : function(){
-			        		mainCtr.goToOrderReplyFn();
-			        	}
 			        }
 			    ]
 			}

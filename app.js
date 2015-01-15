@@ -67,15 +67,9 @@ function initFn(){
 	    name: 'iTenants',
 
 	    requires: [
-            'Ext.MessageBox',
-            'iTenants.store.Task',
-            'iTenants.store.PL',
-            'iTenants.store.BigTask',
-            'iTenants.store.Components',
-            'iTenants.store.Grouped'
+            'Ext.MessageBox'
         ],	            
         stores : [
-          'Bands',
           'MarketListStore',
           'OrderListEnter',
           'CheckList',
@@ -84,9 +78,6 @@ function initFn(){
 
 	    models: [
 			'Task',
-			'PL',
-			'Components',
-			'Band',
 			'MarketList',
 			'OrderList',
 			'CheckList',
@@ -94,11 +85,6 @@ function initFn(){
 	    ],
 	    views: [
 			'Main',
-			'ListItem',
-			'BandList',
-			'BandIndex',
-			'BandDetail',
-			'MarketList',
 			'OrderIndex',
 			'OrderList',
 			'HandingOver',
@@ -111,6 +97,8 @@ function initFn(){
 			'SignatureView',
 			'PhotoActionSheet',
 			'PostilImgList',
+			'CarouselView',
+			'ProjectDetail'
 	    ],
 	    controllers: [
 	        'Main',

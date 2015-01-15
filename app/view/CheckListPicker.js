@@ -5,44 +5,34 @@
  */
 
 Ext.define('iTenants.view.CheckListPicker', {
-	extend: 'Ext.Container',
+	extend: 'Ext.ActionSheet',
 	xtype: 'checkListPicker',
 	config: {
 		cls: 'checkListPicker',
-		zIndex: 1,
-		fullscreen: true,
+		hideOnMaskTap : true,
 		layout: 'vbox',
-		hideOnMaskTap: true,
-		masked: true,
 		items: [{
-				xtype: 'container',
-				cls: 'btm',
-				docked: 'bottom',
-				items: [{
-					xtype: 'label',
-					cls: 'label',
-					html: ''
-				}, {
-					xtype: 'button',
-					cls: 'btn',
-					text: 'Ok'
-				}, {
-					xtype: 'button',
-					cls: 'btn defectBtn',
-					text: 'Defect found',
-					handler: function() {
-						handingOverCtr.jumpToDefect();
-					}
-				}, {
-					xtype: 'button',
-					cls: 'btn',
-					text: 'Cancel',
-					handler: function() {
-						handingOverCtr.hideCheckListPicker();
-					}
-				}]
-			},
-
-		]
+				xtype: 'label',
+				cls: 'label',
+				html: ''
+			}, {
+				xtype: 'button',
+				cls: 'btn',
+				text: 'Ok'
+			}, {
+				xtype: 'button',
+				cls: 'btn defectBtn',
+				text: 'Defect found',
+				handler: function() {
+					handingOverCtr.jumpToDefect();
+				}
+			}, {
+				xtype: 'button',
+				cls: 'btn',
+				text: 'Cancel',
+				handler: function() {
+					handingOverCtr.hideCheckListPicker();
+				}
+		    }]
 	}
 });

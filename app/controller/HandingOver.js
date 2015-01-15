@@ -88,7 +88,7 @@ Ext.define('iTenants.controller.HandingOver', {
     			fn : 'goToPostilImgListFn',
     			event : 'tap',
 	        	delegate : '#modifyPostil',
-	        	args : [],
+	        	args : ['modifyPostil'],
 	        	scope : handingOverCtr
     		},{
     			fn : 'goToSignatureFn',
@@ -181,7 +181,12 @@ Ext.define('iTenants.controller.HandingOver', {
      * @param eOpts
      */
     goToSignatureFn : function(img,e,eOpts){
-		navCtr.pushToNext('iTenants.view.SignatureView', function(view) {});
+    	if (!this.signatureView) {
+			this.signatureView = Ext.widget('signatureView');
+		}
+		var signatureView = this.signatureView;
+		Ext.Viewport.add(signatureView);
+		signatureView.show();
     },
     /**
      * 显示邮件按钮picker
@@ -194,6 +199,7 @@ Ext.define('iTenants.controller.HandingOver', {
     		ep = Ext.create('Ext.Picker',{
     		 name: 'examine',
     		 cls: 'examinePicker',
+    		 hideOnMaskTap : true,
     		 doneButton: {
     			cls: 'btn',
     			ui: 'plain'
@@ -273,6 +279,12 @@ Ext.define('iTenants.controller.HandingOver', {
         	Ext.ComponentQuery.query('#mobileNumberVal')[0].setData({mobileNumber : testJson.mobileNumber});
         	Ext.ComponentQuery.query('#emailVal')[0].setData({email : testJson.email});
         	Ext.ComponentQuery.query('#addressVal')[0].setData({address : testJson.address});
+        	
+        	view.getComponent('workOrderDetailsChild').down('#floorPlanCon').element.on({
+    			tap : handingOverCtr.goToPostilImgListFn,
+    			scope : handingOverCtr,
+    			args : ['floorPlan']
+			});
         });
     },
     /**
@@ -291,13 +303,19 @@ Ext.define('iTenants.controller.HandingOver', {
 					Token: "R3TWGNeql8k3bamyXzhURhwbbIxi6z56"
 				},
 				url = "resources/data/GetProjectList.json";
-//			var checkDetail = view.getComponent('checkDetail'),
-//				latestReply = view.getComponent('latestReply'),
-			var	InspectList = view.getComponent('InspectList'),
-				checkDetail = view.getComponent('InspectList').down('#checkDetail'),
-				latestReply = view.getComponent('InspectList').down('#latestReply');
-		
+				
 			var resultFun = function(responseText) {
+				
+				if(!view.getComponent('inspectList')){
+					view.add({
+						xtype : 'inspectList'
+					});
+				}
+				
+				var	InspectList = view.getComponent('inspectList'),
+					checkDetail = view.getComponent('inspectList').down('#checkDetail'),
+					latestReply = view.getComponent('inspectList').down('#latestReply');
+
 				if (Ext.isEmpty(responseText)) {
 					store.setData(null);
 				} else {

@@ -1,49 +1,49 @@
 {
     "months" : {
-        "1"  : "1月",
-        "2"  : "2月",
-        "3"  : "3月",
-        "4"  : "4月",
-        "5"  : "5月",
-        "6"  : "6月",
-        "7"  : "7月",
-        "8"  : "8月",
-        "9"  : "9月",
-        "10" : "10月",
-        "11" : "11月",
-        "12" : "12月"
+        "1"  : "January",
+        "2"  : "February",
+        "3"  : "March",
+        "4"  : "April",
+        "5"  : "May",
+        "6"  : "June",
+        "7"  : "July",
+        "8"  : "August",
+        "9"  : "September",
+        "10" : "October",
+        "11" : "November",
+        "12" : "December"
     },
     "settingview" : {
-    	"title" : "设置",
+    	"title" : "Settings",
     	"fieldset" : {
-	    	"title" : "语言",
-	    	"instructions" : "设置语言"
+	    	"title" : "Language",
+	    	"instructions" : "Setting Language"
     	}
     },
     "pullRefresh" : {
-    	"loadingText" : "加载中...",
-    	"lastUpdatedText" : "最后更新时间",
-    	"pullRefreshText" : "下拉刷新...",
-    	"releaseRefreshText" : "松开即刷新..."
+    	"loadingText" : "Loading...",
+    	"lastUpdatedText" : "Last update time",
+    	"pullRefreshText" : "Pull down to refresh...",
+    	"releaseRefreshText" : "Release to refresh..."
     },
     "listPaging" : {
-    	"loadMoreText" : "加载更多...",
-		"noMoreRecordsText" : "暂无更多记录"
+    	"loadMoreText" : "Load More...",
+		"noMoreRecordsText" : "No More Records"
     },
     "numericalPicker" : {
-	    "doneButtonText" : "确定",
-    	"cancelButtonText" : "取消"
+	    "doneButtonText" : "OK",
+    	"cancelButtonText" : "Cancel"
     },
     "actionSheet" :{
-        "cancel" : "取消",
-        "deleteDraft" : "删除草稿",
-        "Photograph" : "拍照",
-        "Album" : "从相册中选择"
+        "cancel" : "Cancel",
+        "deleteDraft" : "Delete Draft",
+        "Photograph" : "Photograph",
+        "Album" : "Choose from a photo album"
     },
     "tapeSheet" :{
-        "tapeBtnText" : "开始录音",
-        "playAudioText" : "播放",
-        "title" : "录音最长时间20秒"
+        "tapeBtnText" : "Start recording",
+        "playAudioText" : "play",
+        "title" : "Recording:20 seconds left"
     },
     "workOrderDetails" : {
     	"title" : "Detailed Information"
@@ -74,5 +74,8 @@
     },
     "postilImgList" : {
     	"title" : "Floor Plan"
+    },
+    "projectDetail" : {
+    	"contactMallBtnText" : "Call OM"
     }
 }

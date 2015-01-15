@@ -80,6 +80,6 @@ Ext.define('Ext.ux.ImageGridList.view.Image', {
     toggleChecked: function(model){
 
         var selected = model.get('selected');
-        model.set('selected',!selected);
+//        model.set('selected',!selected);
     }
 });

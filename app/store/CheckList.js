@@ -6,22 +6,21 @@
 
 Ext.define('iTenants.store.CheckList', {
     extend: 'Ext.data.Store',
-    storeId: "checkList",
     config: {
 	    model: 'iTenants.model.CheckList',
-
+	    storeId: "checkList",
 	    data:[
       		{
     			state: 0,
-    			name:'asdfgdfgas'
+    			name:'Type & Cat: (TBA by Project)'
     		},
     		{
     			state: 0,
-    			name:'asdfgddfdfgas'
+    			name:'Dimension and specification: (TBA by Project)'
     		},
     		{
     			state: 0,
-    			name:'asdfgdfgas'
+    			name:'Section diagram for a typical dry partition: (TBA by Project) <br /> Layer of coating:(TBA by Project) <br /> Color Code: (TBA by Project)'
     		}
 	    ]
     }

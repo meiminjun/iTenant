@@ -74,5 +74,8 @@
     },
     "postilImgList" : {
     	"title" : "Floor Plan"
+    },
+    "projectDetail" : {
+    	"contactMallBtnText" : "Call OM"
     }
 }

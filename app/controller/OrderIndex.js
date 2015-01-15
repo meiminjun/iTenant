@@ -36,7 +36,7 @@ Ext.define('iTenants.controller.OrderIndex', {
     		stateSegBtns.setPressedButtons(stateSegBtns.getItems().items[0]);
     	//默认类型
     		typeSegBtns.setPressedButtons(typeSegBtns.getItems().items[0]);
-    		typeSegBtns.getItems().items[0].setBadgeText('2');
+    		typeSegBtns.getItems().items[0].setBadgeText('4');
     		typeSegBtns.getItems().items[1].setBadgeText('0');
     	orderIndex.down('orderList').setStore(Ext.getStore('OrderListEnter'));
     },

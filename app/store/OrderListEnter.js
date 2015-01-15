@@ -11,21 +11,27 @@ Ext.define('iTenants.store.OrderListEnter', {
 
 	    data:[
 	    {
-	    	name: 'aaa',
-	    	date: '2014-12-12',
-	    	number: '1-1',
+	    	name: 'Adidas',
+	    	date: '2014-11-10',
+	    	number: '01-01',
 	    	state: 0
 	    },
 	    {
-	    	name: 'aaa',
-	    	date: '2014-12-12',
-	    	number: '1-1',
+	    	name: 'Nike',
+	    	date: '2014-11-09',
+	    	number: '02-02',
 	    	state: 0
 	    },
 	    {
-	    	name: 'aaa',
-	    	date: '2014-12-12',
-	    	number: '1-1',
+	    	name: 'Macdonalds',
+	    	date: '2014-11-08',
+	    	number: '03-03',
+	    	state: 0
+	    },
+	    {
+	    	name: 'Burger King',
+	    	date: '2014-11-07',
+	    	number: '04-04',
 	    	state: 0
 	    }
 	    ]
