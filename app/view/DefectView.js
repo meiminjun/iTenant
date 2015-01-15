@@ -5,6 +5,7 @@
  */
 Ext.define('iTenants.view.DefectView', {
 	extend: 'Ext.Container',
+	xtype : 'defectView',
 	requires: [
 	    'Ext.TitleBar',
 		'Ext.form.FieldSet',
@@ -12,6 +13,10 @@ Ext.define('iTenants.view.DefectView', {
 		'Ext.Button'
 	],
 	config: {
+		autoDestroy: false,
+		itemId: 'defectView',
+		layout : 'vbox',
+		cls : 'bgCls',
 		items: [{
 			xtype: 'titlebar',
 			docked: 'top',

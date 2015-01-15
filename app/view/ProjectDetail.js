@@ -13,10 +13,6 @@ Ext.define('iTenants.view.ProjectDetail', {
 		itemId : 'projectDetail',
 		layout : 'vbox',
 		cls : 'bgCls',
-		scrollable: {
-	        directionLock: true,
-	        direction: 'vertical'
-	    },
 		items : [ {
 			xtype : 'titlebar',
 			docked : 'top',
@@ -34,7 +30,10 @@ Ext.define('iTenants.view.ProjectDetail', {
 			} ]
 		}, {
 			xtype : 'container',
-			scrollable : true,
+			scrollable: {
+		        directionLock: true,
+		        direction: 'vertical'
+		    },
 			flex : 9,
 			itemId : 'projectDetailContent',
 			items : [ {
@@ -51,7 +50,7 @@ Ext.define('iTenants.view.ProjectDetail', {
 					xtype : 'container',
 					flex : 7,
 					style : 'padding-top:12px;',
-					data : {MallName : '凯德广场天府.成都',Address : '成都市高新区天仁路338号'},
+					data : {MallName : 'Tampines Mall',Address : '4 Tampines Central 5  Singapore 529510'},
 					tpl : '<div style="color:#1c4603;font-size:17px;">{MallName}</div>' +
 						  '<div style="color:#878787;font-size:15px;margin-top:5px;">{Address}</div>'
 				} ]

@@ -122,7 +122,7 @@ Ext.define('iTenants.view.HandingOver', {
 		                      '</div>',
 		                {
 							getNumberTitle: function(){
-							    return 'Unit NO';
+							    return 'Unit No';
 							},
 							getDateTitle: function(){
 								return 'Date of Inspection';

@@ -19,9 +19,8 @@ Ext.define('iTenants.view.MarketList', {
             direction: 'vertical'
         },
         store: 'MarketListStore',
-		cls : "marketList",
-		pressedCls : 'customListItem-item-pressed',
-		selectedCls : 'customListItem-item-selected',
+		cls : "marketList bgCls",
+		selectedCls : '',
 		itemTpl: [
 	        '<div style="position:absolute;top:22px;left:11px">',
 				'<div class="avatar-img">',

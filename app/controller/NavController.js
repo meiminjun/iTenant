@@ -173,6 +173,7 @@ Ext.define('iTenants.controller.NavController', {
 	            // 异步清空
 	            Ext.Function.defer(function(){me.clearCurrentPage(component);},500);
 			}
+			return count > 0;
 	    }catch(e){Ext.Logger.deprecate(e);}
 	},
 	/**

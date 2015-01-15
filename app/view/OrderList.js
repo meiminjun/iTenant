@@ -18,7 +18,7 @@ Ext.define('iTenants.view.OrderList', {
 		allowDeselect: false,
 		scrollToTopOnRefresh: false,
 		
-		cls: 'orderList',
+		cls: 'orderList bgCls',
 		scrollable: {
 			directionLock: true,
 			direction: 'vertical'

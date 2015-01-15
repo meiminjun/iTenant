@@ -19,7 +19,7 @@
  */
 function onBackKeyDown() {
 	
-	var indexNav = mainCtr.getIndexNav();
+/*	var indexNav = mainCtr.getIndexNav();
 	
 	if (indexNav) {
 		// navigationView parent
@@ -29,6 +29,9 @@ function onBackKeyDown() {
 			PhoneGapAPI.exit();
 		}
 	} else {
+		PhoneGapAPI.exit();
+	}*/
+	if(!navCtr.popToPrev()){
 		PhoneGapAPI.exit();
 	}
 }

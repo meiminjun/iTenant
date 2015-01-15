@@ -580,11 +580,13 @@ List页面 设置infinite时的loadmore按钮高度
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	min-height: 40px;
-	max-height: 40px
+	max-height: 40px;
+	font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;
+
 }
 .listImgDef {
-	width: 70px;
-	height: 70px;
+	width: 44px;
+	height: 44px;
 	margin-top: -1px
 }
 .arrow-black {
@@ -620,6 +622,9 @@ List页面 设置infinite时的loadmore按钮高度
 	font-family: "微软雅黑";
 	color: #003e00;
 	font-size: 13px;
+}
+.marketList .x-list-item {
+	background-color: white
 }
 /*检查点详情*/
 
@@ -711,6 +716,9 @@ List页面 设置infinite时的loadmore按钮高度
 .inspectListCls .itemcls .x-innerhtml {
 	padding: 12px 0px !important;
 }
+.inspectListCls .x-list-item{
+	background : white
+}
 .problemList-Div .problemList-row {
 	margin: 0px 8px 0px 40px;
 }
@@ -723,24 +731,27 @@ List页面 设置infinite时的loadmore按钮高度
 	margin: -.5em auto auto -.3em;
 }
 .problemName {
-	font-family: "微软雅黑";
+	font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;";
 	font-size: 15px;
 	font-weight: bold;
 	padding: 1px;
 }
 .probleContent {
 	padding: 3px;
-	font-family: "微软雅黑";
+	font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;";
 	font-size: 13px;
 	margin-top: 2px;
+	color: #474747;
 }
 .latestReply-Div {
 	padding: 8px;
 	padding-left: 34px;
 }
 .latestReply-Div .content {
-	font-size: 15px;
+	font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;
+	font-size: 12px;
 	padding: 7px;
+	color: #474747;
 }
 .photos {
 	width: 51px !important;
@@ -823,6 +834,7 @@ search输入框样式
 	font-size: 13px;
 	margin-left: 0px;
 	position: absolute;
+	-webkit-text-fill-color: initial;
 }
 .orderList .searchfield .x-clear-icon {
 	height: 32px;
@@ -901,6 +913,9 @@ search输入框样式
 
 .orderList .x-list-item .x-innerhtml {
 	padding: 5px 6px !important;
+}
+.orderList .x-list-item{
+	background : white
 }
 .orderList .orderListItem {
 	display: -webkit-box;
@@ -1040,6 +1055,9 @@ handing over
 }
 .handingOver .subtitleLabel {
 	border-bottom: 2px solid #3899d6;
+	display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 }
 .handingOver .subtitleLabel .x-innerhtml {
 	background-color: #3899d6;
@@ -1051,7 +1069,6 @@ handing over
 	line-height: 23px;
 	height: 21px;
 	position: relative;
-	display: inline-block;
 }
 .handingOver .subtitleLabel .x-innerhtml::after {
 	content: '';
@@ -1099,16 +1116,11 @@ handing over
 	display: flex;
 	-webkit-align-items: center;
 	-webkit-box-align: center;
-<<<<<<< .mine
-	align-items: center;
-	color: #474747;
-	font-size: 13px;
-=======
     align-items: center;
     color: #474747;
     font-size: 15px;
     line-height: 20px;
->>>>>>> .r3697
+    padding: 5px 0px;
 }
 .handingOver .checkList .checkListItem .next {
 	width: 20px;
@@ -1176,7 +1188,7 @@ handing over
 .checkListPicker .btn {
 	background-image: none;
 	background-color: #ffffff;
-	margin: 6px 25px 6px 25px;
+	margin: 6px 20px 6px 20px;
 	border: none;
 	height: 44px;
 }
