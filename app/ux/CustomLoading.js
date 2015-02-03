@@ -254,6 +254,7 @@ Ext.define('iTenants.ux.CustomLoading',{
             if(initconfig.modal == undefined){
                 initconfig.modal = true;
             }
+            console.log(initconfig);
 
             tempconfig = {
                 message:initconfig.message|| '系统处理中……',

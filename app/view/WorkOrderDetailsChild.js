@@ -9,28 +9,17 @@ Ext.define('iTenants.view.WorkOrderDetailsChild', {
     extend: 'Ext.Container',
     xtype : 'workOrderDetailsChild',
     
-    requires : ['Ext.Toolbar'],
+    requires : ['Ext.Label'],
     config: {
         itemId: 'workOrderDetailsChild',
         layout : 'vbox',
         items: [{
         		// Unit Information
-				xtype : 'toolbar',
-				cls : 'titleBarCls',
-				itemId : 'unitInformation',
-				items : [ {
-					xtype : 'button',
-					ui : 'plain',
-					locales : {
-						text : 'workOrderDetailsChild.unitText'
-					},
-					cls : 'tagBtnCls'
-				}, {
-					xtype : 'label',
-					cls : 'tagTriggleCls'
-				}, {
-					xtype : 'spacer'
-				} ]
+	        	xtype: 'label',
+				cls: 'subtitleLabel',
+				locales : {
+					html : 'workOrderDetailsChild.unitText'
+				}
 			},{
 				// Unit Name
 				xtype : 'container',
@@ -74,41 +63,20 @@ Ext.define('iTenants.view.WorkOrderDetailsChild', {
                     ]
            		}]
 			},{
-				// Area
-				xtype : 'container',
-           		layout: 'hbox',
-           		itemId : 'areaCon',
-           		style : 'border-bottom: 1px solid #DCDCDC;',
-           		items : [{
-                    flex: 2,
-                    cls : 'repairOrderItemsConLeft',
-                    itemId : 'areaLabel',
-                    locales : {
-                    	html : 'workOrderDetailsChild.areaLabel'
-                    }
-           		},{
-                    flex: 3,
-                    cls : 'repairOrderItemsConRight',
-                    itemId : 'areaVal',
-                    tpl : [
-                       '{area}'
-                    ]
-           		}]
-			},{
 				// OPS Contact Person
 				xtype : 'container',
            		layout: 'hbox',
            		itemId : 'oContactPersonCon',
            		style : 'border-bottom: 1px solid #DCDCDC;',
            		items : [{
-                    flex: 2,
+                    flex: 3,
                     cls : 'repairOrderItemsConLeft',
                     itemId : 'oContactPersonLabel',
                     locales : {
                     	html : 'workOrderDetailsChild.oContactPersonLabel'
                     }
            		},{
-                    flex: 3,
+                    flex: 2,
                     cls : 'repairOrderItemsConRight',
                     itemId : 'oContactPersonVal',
                     tpl : [
@@ -122,14 +90,14 @@ Ext.define('iTenants.view.WorkOrderDetailsChild', {
            		itemId : 'fContactPersonCon',
            		style : 'border-bottom: 1px solid #DCDCDC;',
            		items : [{
-                    flex: 2,
+                    flex: 3,
                     cls : 'repairOrderItemsConLeft',
                     itemId : 'fContactPersonLabel',
                     locales : {
                     	html : 'workOrderDetailsChild.fContactPersonLabel'
                     }
            		},{
-                    flex: 3,
+                    flex: 2,
                     cls : 'repairOrderItemsConRight',
                     itemId : 'fContactPersonVal',
                     tpl : [
@@ -159,128 +127,168 @@ Ext.define('iTenants.view.WorkOrderDetailsChild', {
            			src : "resources/images/arrow-black.png"
            		}]
 			},{
+				// Pre-inspection
+				xtype : 'container',
+           		layout: 'hbox',
+           		itemId : 'preInspectionCon',
+           		style : 'border-bottom: 1px solid #DCDCDC;',
+           		items : [{
+                    flex: 2,
+                    cls : 'repairOrderItemsConLeft',
+                    itemId : 'preInspectionLabel',
+                    locales : {
+                    	html : 'workOrderDetailsChild.preInspection'
+                    }
+           		},{
+           			xtype: 'image',
+           			flex: 3,
+           			itemId: 'preInspection',
+           			docked : 'right',
+           			cls : 'repairOrderItemsConRight',
+           			style : 'background-size:17px',
+           			src : "resources/images/arrow-black.png"
+           		}]
+			},{
 				// Tenant Information
-				xtype : 'toolbar',
-				cls : 'titleBarCls',
-				itemId : 'unitInformation',
-				items : [ {
-					xtype : 'button',
-					ui : 'plain',
-					locales : {
-						text : 'workOrderDetailsChild.tenantText'
-					},
-					cls : 'tagBtnCls'
-				}, {
-					xtype : 'label',
-					cls : 'tagTriggleCls'
-				}, {
-					xtype : 'spacer'
-				} ]
+				xtype: 'label',
+				cls: 'subtitleLabel',
+				locales : {
+					html : 'workOrderDetailsChild.tenantText'
+				}
 			},{
-				// Tenant Name
+				// 租客的代表（姓名，联系电话，电子邮件）
+				xtype : 'container',
+           		itemId : 'tenantRepresentatives',
+				style : 'border-bottom: 1px solid #DCDCDC;background:white',
+           		tpl : [
+           		    '<div class="informationHeadImg"></div>',
+           		    '<div class="tenantInformation">',
+           		    	'<div class="post">{post}</div>',
+           		    	'<div class="name">{name}</div>',
+           		    	'<div class="contacts">',
+           		    		'<div class="mobile">{mobile}</div>',
+           		    		'<div class="email">{email}</div>',
+           		    	'</div>',
+           		    '</div>'
+           		]
+			},{
+				// Date of possession（所有日期）
 				xtype : 'container',
            		layout: 'hbox',
-           		itemId : 'tenantNameCon',
+           		itemId : 'possessionDateCon',
+           		style : 'border-bottom: 1px solid #DCDCDC;',
+           		items : [{
+                    flex: 1,
+                    cls : 'repairOrderItemsConLeft',
+                    itemId : 'possessionDateLabel',
+                    locales : {
+                    	html : 'workOrderDetailsChild.possessionDateLabel'
+                    }
+           		},{
+                    flex: 1,
+                    cls : 'repairOrderItemsConRight',
+                    itemId : 'possessionDateVal',
+                    tpl : [
+                       '{possessionDate}'
+                    ]
+           		}]
+			},{
+				// Lease period（租赁期限）
+				xtype : 'container',
+           		layout: 'hbox',
+           		itemId : 'periodCon',
            		style : 'border-bottom: 1px solid #DCDCDC;',
            		items : [{
                     flex: 2,
                     cls : 'repairOrderItemsConLeft',
-                    itemId : 'tenantNameLabel',
+                    itemId : 'periodLabel',
                     locales : {
-                    	html : 'workOrderDetailsChild.tenantNameLabel'
+                    	html : 'workOrderDetailsChild.periodLabel'
                     }
            		},{
                     flex: 3,
                     cls : 'repairOrderItemsConRight',
-                    itemId : 'tenantNameVal',
+                    itemId : 'periodVal',
                     tpl : [
-                       '{tenantName}'
+                       '{period}'
                     ]
            		}]
 			},{
-				// Contact Number
+				// Lease Area（租赁面积（进行最终调查））
 				xtype : 'container',
            		layout: 'hbox',
-           		itemId : 'contactNumberCon',
+           		itemId : 'areaCon',
            		style : 'border-bottom: 1px solid #DCDCDC;',
            		items : [{
                     flex: 2,
                     cls : 'repairOrderItemsConLeft',
-                    itemId : 'contactNumberLabel',
+                    itemId : 'areaLabel',
                     locales : {
-                    	html : 'workOrderDetailsChild.contactNumberLabel'
+                    	html : 'workOrderDetailsChild.areaLabel'
                     }
            		},{
                     flex: 3,
                     cls : 'repairOrderItemsConRight',
-                    itemId : 'contactNumberVal',
+                    itemId : 'areaVal',
                     tpl : [
-                       '{contactNumber}'
+                       '{area}'
                     ]
            		}]
 			},{
-				// Mobile Number
-				xtype : 'container',
-           		layout: 'hbox',
-           		itemId : 'mobileNumberCon',
-           		style : 'border-bottom: 1px solid #DCDCDC;',
-           		items : [{
-                    flex: 2,
-                    cls : 'repairOrderItemsConLeft',
-                    itemId : 'mobileNumberLabel',
-                    locales : {
-                    	html : 'workOrderDetailsChild.mobileNumberLabel'
-                    }
-           		},{
-                    flex: 3,
-                    cls : 'repairOrderItemsConRight',
-                    itemId : 'mobileNumberVal',
-                    tpl : [
-                       '{mobileNumber}'
-                    ]
-           		}]
+				// Contacts
+				xtype: 'label',
+				cls: 'subtitleLabel',
+				locales : {
+					html : 'workOrderDetailsChild.contactsLabel'
+				}
 			},{
-				// Email
+				// 营销经理的联系方式（姓名，联系电话，电子邮件）
 				xtype : 'container',
-           		layout: 'hbox',
-           		itemId : 'emailCon',
-           		style : 'border-bottom: 1px solid #DCDCDC;',
-           		items : [{
-                    flex: 2,
-                    cls : 'repairOrderItemsConLeft',
-                    itemId : 'emailLabel',
-                    locales : {
-                    	html : 'workOrderDetailsChild.emailLabel'
-                    }
-           		},{
-                    flex: 3,
-                    cls : 'repairOrderItemsConRight',
-                    itemId : 'emailVal',
-                    tpl : [
-                       '{email}'
-                    ]
-           		}]
+				itemId : 'marketingManager',
+				style : 'border-bottom: 1px solid #DCDCDC;background:white',
+				tpl : [
+			        '<div class="informationHeadImg"></div>',
+				    '<div class="tenantInformation">',
+				    	'<div class="post">{post}</div>',
+				    	'<div class="name">{name}</div>',
+				    	'<div class="contacts">',
+				    		'<div class="mobile">{mobile}</div>',
+				    		'<div class="email">{email}</div>',
+				    	'</div>',
+				    '</div>'
+				]
 			},{
-				// Address
+				// 资产经理的联系方式（姓名，联系电话，电子邮件）
 				xtype : 'container',
-           		layout: 'hbox',
-           		itemId : 'addressCon',
-           		style : 'border-bottom: 1px solid #DCDCDC;',
-           		items : [{
-                    flex: 2,
-                    cls : 'repairOrderItemsConLeft',
-                    itemId : 'addressLabel',
-                    locales : {
-                    	html : 'workOrderDetailsChild.addressLabel'
-                    }
-           		},{
-                    flex: 3,
-                    cls : 'repairOrderItemsConRight',
-                    itemId : 'addressVal',
-                    tpl : [
-                       '{address}'
-                    ]
-           		}]
+				itemId : 'assetManager',
+				style : 'border-bottom: 1px solid #DCDCDC;background:white',
+				tpl : [
+			        '<div class="informationHeadImg"></div>',
+				    '<div class="tenantInformation">',
+				    	'<div class="post">{post}</div>',
+				    	'<div class="name">{name}</div>',
+				    	'<div class="contacts">',
+				    		'<div class="mobile">{mobile}</div>',
+				    		'<div class="email">{email}</div>',
+				    	'</div>',
+				    '</div>'
+				]
+			},{
+				// 物业服务代表（姓名，联系电话，电子邮件）
+				xtype : 'container',
+				itemId : 'propertyServices',
+				style : 'border-bottom: 1px solid #DCDCDC;background:white',
+				tpl : [
+			        '<div class="informationHeadImg"></div>',
+				    '<div class="tenantInformation">',
+				    	'<div class="post">{post}</div>',
+				    	'<div class="name">{name}</div>',
+				    	'<div class="contacts">',
+				    		'<div class="mobile">{mobile}</div>',
+				    		'<div class="email">{email}</div>',
+				    	'</div>',
+				    '</div>'
+				]
 			}
         ]
     }

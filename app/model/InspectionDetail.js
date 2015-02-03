@@ -3,16 +3,24 @@ Ext.define('iTenants.model.InspectionDetail', {
 	requires:['Ext.data.Field'],
 	config: {
 		fields: [{
-			name:'ProjectStatus'
+			name:'Comments'
 		},
 		{
-			name:'Description'
+			name:'Modifier'
 		},{
-			name:'LastCheckUserName'
+			name:'ModifierTime'
 		},{
-			name:'time'
+			name:'Status'
 		},{
-			name:'ProjectImage'
+			name:'ImagePath'
+		},{
+			name:'Thumbnail'
+		},{
+			name:'PathArrayString'
+		},{
+			name:'CheckPoint'
+		},{
+			name:'CheckPointDes'
 		}]
 	}
 });

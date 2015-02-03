@@ -42,5 +42,11 @@ Ext.define('iTenants.view.PostilImgList', {
  			    ]
             }
         ]
+    },
+    destroyChildFn: function(){
+    	var child = navCtr['PostilImgList'].getComponent('image-grid-list-panel');
+    	if(child){
+    		child.destroy();
+    	}
     }
 });

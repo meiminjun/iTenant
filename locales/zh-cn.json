@@ -37,8 +37,8 @@
     "actionSheet" :{
         "cancel" : "Cancel",
         "deleteDraft" : "Delete Draft",
-        "Photograph" : "Photograph",
-        "Album" : "Choose from a photo album"
+        "Photograph" : "Take photo",
+        "Album" : "Choose from library"
     },
     "tapeSheet" :{
         "tapeBtnText" : "Start recording",
@@ -52,7 +52,6 @@
     	"unitText" : "Unit Information",
     	"unitNameLabel" : "Name",
     	"businessTypeLabel" : "Business Type",
-    	"areaLabel" : "Area",
     	"oContactPersonLabel" : "OPS Contact Person",
     	"fContactPersonLabel" : "Finance Contact Person",
     	"floorPlanLabel" : "Floor Plan",
@@ -61,7 +60,12 @@
     	"contactNumberLabel" : "Contact Number",
     	"mobileNumberLabel" : "Mobile Number",
     	"emailLabel" : "Email",
-    	"addressLabel" : "Address"
+    	"addressLabel" : "Address",
+    	"preInspection"  : "Pre-inspection pictures",
+    	"possessionDateLabel" : "Date of possession",
+    	"periodLabel" : "Lease Period",
+    	"areaLabel" : "Lease Area",
+    	"contactsLabel" : "Contacts"
     },
     "modifyView" : {
     	"title" : "Modify",
@@ -77,5 +81,10 @@
     },
     "projectDetail" : {
     	"contactMallBtnText" : "Call OM"
+    },
+    "orderIndex" : {
+    	"emptyText" : "没有相关数据.",
+    	"loadMoreText" : "加载更多...",
+		"noMoreRecordsText" : "暂无更多记录"
     }
 }

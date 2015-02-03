@@ -6,8 +6,14 @@
 Ext.define('iTenants.controller.Main', {
 	extend: 'Ext.app.Controller',
 	config: {
-		refs: {},
+		refs: {
+			main : 'main',
+			marketlist:'marketList[itemId=marketList]'
+		},
 		control: {
+			'main':{
+				show:'showFun'
+			},
 			'accordionlist[itemId=basic]': {
 				leafitemtap: 'onLeafItemTap'
 			},
@@ -31,6 +37,23 @@ Ext.define('iTenants.controller.Main', {
 	init: function() {
 		// 获取用户选择的语言缓存信息
 		iTenants.util.PubOperation.initLanguage();
+	},
+	showFun:function(obj,e,eOpts) {
+		var main = this.getMain(),marketList = this.getMarketlist(),store = Ext.getStore('marketListStore');
+		// ajax or set store
+		var param = {
+			ADAccount: Global.userAccount,
+            Token: Global.userToken,
+            GPSLongitude: Global.longitude,
+            GPSLatitude:Global.latitude,
+            language:Global.language
+		};
+		// set Global param
+//			Global.proListPm = param;
+		
+		iTenants.util.PubOperation.pubListLoad(store, param, true, true, 'marketList',function(){
+//				console.log("---------回调----"+rows);
+		});
 	},
 	/**
 	 * 首页返回至AIO
@@ -56,66 +79,85 @@ Ext.define('iTenants.controller.Main', {
 	 * @param eOpts
 	 */
 	jumpToOrderIndex: function(obj, index, target, record, e, eOpts) {
-		var className = e.target.className;
+		var me = this,
+			className = e.target.className;
 		
 		if(className == 'detailImg'){
 			navCtr.pushToNext('iTenants.view.ProjectDetail', function(view) {
-				view.down('titlebar').setTitle(record.get('ProjectName'));
+				iTenants.util.PubOperation.showLoadMask();
+				view.down('titlebar').setTitle(record.get('MarketShortName'));
+				
+				if(!view.getComponent('projectDetailChild')){
+					view.add([{
+						xtype : 'container',
+						scrollable: {
+					        directionLock: true,
+					        direction: 'vertical'
+					    },
+						flex : 9,
+						itemId : 'projectDetailChild',
+						items : [{
+							xtype : 'container',
+							layout : 'hbox',
+							height : 90,
+							items : [ {
+								xtype : 'container',
+								name:'picPanel',
+								flex : 3,
+								style : 'text-align:center;padding-top:12px;',
+								tpl : '<img width="66" height="66" src="{Image}" />'
+							}, {
+								xtype : 'container',
+								flex : 7,
+								name:'conPanel',
+								style : 'padding-top:12px;',
+			//					data : {MallName : 'Tampines Mall',Address : '4 Tampines Central 5  Singapore 529510'},
+								tpl : '<div style="color:#1c4603;font-size:17px;">{MarketShortName}</div>' +
+									  '<div style="color:#878787;font-size:15px;margin-top:5px;">{Address}</div>'
+							} ]
+						},{
+							xtype : 'container',
+							height : 100,
+							items : [{
+								xtype : 'button',
+								width:'140px',
+								centered : true,
+					        	ui : 'customBtn',
+					        	style : 'margin-top:36px;',
+								locales : {
+									text : 'projectDetail.contactMallBtnText'
+								},
+								handler: function(){
+									me.makingCallFn(record.get('BusinessManagerTEL'));
+								}
+							}]
+						}]
+					}]);
+					view.down('container[name=picPanel]').setData(record.data);
+					view.down('container[name=conPanel]').setData(record.data);
+				}
+				
+				Ext.Function.defer(function(){iTenants.util.PubOperation.hideLoadMask();},250);
 			});
 		}else{
 			navCtr.pushToNext('iTenants.view.OrderIndex', function(view) {
-				orderIndexCtr.orderIndexInit();
-				var me = this,
-					store = Ext.getStore('InspectionDetailStore'),
-					params = {
-						ADAccount: "huangcheng1",
-						Token: "R3TWGNeql8k3bamyXzhURhwbbIxi6z56"
-					},
-					url = "resources/data/GetProjectList.json";
-	//			var checkDetail = view.getComponent('checkDetail'),
-	//				latestReply = view.getComponent('latestReply'),
-	//				historyList = view.getComponent('history').down('list');
-				//测试用例：		
-				//			var list = view.getComponent('itemid');
-	
-				//	    	iTenants.util.PubOperation.showLoadMask();
-				var resultFun = function(responseText) {
-					if (Ext.isEmpty(responseText)) {
-						store.setData(null);
-					} else {
-						var resJson = Ext.JSON.decode(responseText);
-						if (resJson.result) {
-							console.log("获取到数据" + resJson);
-							//						checkDetail.setData(resJson.rows[0]);
-							//						latestReply.setData(resJson.rows[0]);
-							//						historyList.setData(resJson.rows);
-							//测试用例
-							//						list.setData(resJson.rows);
-						} else {
-							iTenants.util.PubOperation.showTips('emptyDataMsg', "normal");
-						}
-					}
-				};
-				failureFun = function() {
-					iTenants.util.PubOperation.showTips('requestErrorMsg', 'failure');
-				};
-				// ajax
-				iTenants.util.PubOperation.ajaxFun(url, params, resultFun, failureFun, true, false, 'InspectionDetailStore', 'GET');
-	
+				orderIndexCtr.orderIndexInit(record);
 			});
 		}
 	},
-	/*跳转到工单检查填写表单*/
-	jumpToDefect: function() {
-		navCtr.pushToNext('iTenants.view.DefectView', function(view) {
-			// 组件定义事件委托
-			view.setListeners([{
-				fn: 'getPhoto',
-				event: 'tap',
-				delegate: '#getPhoto',
-				args: [],
-				scope: fileUploadCtr
-			}]);
-		});
-	}
+	/**
+     * 拨打电话
+     * @param tellNum
+     */
+    makingCallFn : function(tellNum){
+		if (Ext.os.is.Android) {
+			if(!Ext.isEmpty(tellNum)){
+				navigator.app.loadUrl('tel:'+ tellNum, { openExternal:true } );
+			}
+		}else if(Ext.os.is.iOS){
+			if(!Ext.isEmpty(tellNum)){
+				window.location.href = 'tel:' + tellNum;
+			}
+		}
+    }
 });

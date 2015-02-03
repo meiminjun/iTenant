@@ -71,9 +71,11 @@ function initFn(){
         ],	            
         stores : [
           'MarketListStore',
-          'OrderListEnter',
           'CheckList',
-          'InspectionDetailStore'
+          'OrderListStore',
+          'InspectionDetailStore',
+          'OfflineLocalStore',
+          'PreInspectionListStore'
         ],
 
 	    models: [
@@ -81,13 +83,15 @@ function initFn(){
 			'MarketList',
 			'OrderList',
 			'CheckList',
-			'InspectionDetail'
+			'InspectionDetail',
+			'PreInspectionList'
 	    ],
 	    views: [
 			'Main',
 			'OrderIndex',
 			'OrderList',
 			'HandingOver',
+			'CheckList',
 			'CheckListPicker',
 			'InspectionDetail',
 			'DefectView',
@@ -98,14 +102,23 @@ function initFn(){
 			'PhotoActionSheet',
 			'PostilImgList',
 			'CarouselView',
-			'ProjectDetail'
+			'PostilImgView',
+			'ProjectDetail',
+			'PreInspection',
+			'PreInspectionList',
+			'HandoverForm',
+			'HandoverFormContent',
+			'HFInspected',
+			'HFAppendix'
+
 	    ],
 	    controllers: [
 	        'Main',
 	        'OrderIndex',
 	        'HandingOver',
 	        'NavController',
-	        'FileUploadCtr'
+	        'FileUploadCtr',
+	        'InspectionDetail'
 	    ],
 	    isIconPrecomposed: true,
 	    launch: function() {
@@ -114,6 +127,7 @@ function initFn(){
 	    	orderIndexCtr = this.getApplication().getController('OrderIndex');
 	    	handingOverCtr = this.getApplication().getController('HandingOver');
 	    	fileUploadCtr = this.getApplication().getController('FileUploadCtr');
+	    	inspectCtr = this.getApplication().getController('InspectionDetail');
 	    }
 	});
 }

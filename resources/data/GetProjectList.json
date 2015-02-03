@@ -15,7 +15,16 @@
 			"NotPassPercent": 5,
 			"ExpiredPercent": 85,
 			"UncheckedPercent": 5,
-			"num":10,
+			"Thumbnail": [
+				{
+					"Url": "resources/images/44.png"
+				},
+				{
+					"Url": "resources/images/22.png"
+				}
+			],
+			"PathArrayString": "resources/images/44.png|resources/images/22.png",
+			"num":4,
 		}, {
 			"ProjectStatus": "Implementation",
 			"ProjectName": "Bedok Mall",
@@ -29,7 +38,16 @@
 			"NotPassPercent": 5,
 			"ExpiredPercent": 29,
 			"UncheckedPercent": 61,
-			"num":8
+			"Thumbnail": [
+				{
+					"Url": "https://micheckuat.capitaretail.com.cn/Attach//ChecksInfoImage/2015_01_08/1dfa3412-9e1d-4b38-a359-f5bcf18e65c5.png"
+				},
+				{
+					"Url": "https://micheckuat.capitaretail.com.cn/Attach//ChecksInfoImage/2015_01_08/03b54a2d-f4b7-411d-aa95-3722399d3e0b.png"
+				}
+			],
+			"PathArrayString": "https://micheckuat.capitaretail.com.cn/Attach//ChecksInfoImage/2015_01_08/1dfa3412-9e1d-4b38-a359-f5bcf18e65c5.png|https://micheckuat.capitaretail.com.cn/Attach//ChecksInfoImage/2015_01_08/03b54a2d-f4b7-411d-aa95-3722399d3e0b.png",
+			"num":0
 		}, {
 			"ProjectStatus": "Implementation",
 			"ProjectName": "Junction 8",
@@ -43,7 +61,16 @@
 			"NotPassPercent": 0,
 			"ExpiredPercent": 36,
 			"UncheckedPercent": 64,
-			"num":1
+			"Thumbnail": [
+				{
+					"Url": "https://micheckuat.capitaretail.com.cn/Attach//ChecksInfoImage/2015_01_08/1dfa3412-9e1d-4b38-a359-f5bcf18e65c5.png"
+				},
+				{
+					"Url": "https://micheckuat.capitaretail.com.cn/Attach//ChecksInfoImage/2015_01_08/03b54a2d-f4b7-411d-aa95-3722399d3e0b.png"
+				}
+			],
+			"PathArrayString": "https://micheckuat.capitaretail.com.cn/Attach//ChecksInfoImage/2015_01_08/1dfa3412-9e1d-4b38-a359-f5bcf18e65c5.png|https://micheckuat.capitaretail.com.cn/Attach//ChecksInfoImage/2015_01_08/03b54a2d-f4b7-411d-aa95-3722399d3e0b.png",
+			"num":0
 		}, {
 			"ProjectStatus": "Implementation",
 			"ProjectName": "Rivervate Mall",
@@ -57,7 +84,16 @@
 			"NotPassPercent": 0,
 			"ExpiredPercent": 0,
 			"UncheckedPercent": 50,
-			"num":5
+			"Thumbnail": [
+				{
+					"Url": "https://micheckuat.capitaretail.com.cn/Attach//ChecksInfoImage/2015_01_08/1dfa3412-9e1d-4b38-a359-f5bcf18e65c5.png"
+				},
+				{
+					"Url": "https://micheckuat.capitaretail.com.cn/Attach//ChecksInfoImage/2015_01_08/03b54a2d-f4b7-411d-aa95-3722399d3e0b.png"
+				}
+			],
+			"PathArrayString": "https://micheckuat.capitaretail.com.cn/Attach//ChecksInfoImage/2015_01_08/1dfa3412-9e1d-4b38-a359-f5bcf18e65c5.png|https://micheckuat.capitaretail.com.cn/Attach//ChecksInfoImage/2015_01_08/03b54a2d-f4b7-411d-aa95-3722399d3e0b.png",
+			"num":0
 		}
 	],
 	"InboxNotReadCount": 38

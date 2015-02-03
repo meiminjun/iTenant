@@ -1,6 +1,6 @@
 /**
  * 拍照actionsheet
- * 
+ * android back要加入判断
  * @author duwei
  * @create 2014-12-30
  */

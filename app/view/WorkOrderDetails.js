@@ -42,5 +42,11 @@ Ext.define('iTenants.view.WorkOrderDetails', {
 			    ]
 			}
         ]
+    },
+    destroyChildFn: function(){
+    	var child = navCtr['WorkOrderDetails'].getComponent('workOrderDetailsChild');
+    	if(child){
+    		child.destroy();
+    	}
     }
 });

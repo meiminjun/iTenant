@@ -28,7 +28,7 @@ Ext.define('iTenants.ux.ImageViewer',{
         scroller.setDisabled(true);
         
         // mask image viewer
-        if(this.getLoadingMask())
+        if(!this.getLoadingMask())
         	iTenants.util.PubOperation.showLoadMask(Global.getTipsMsg('picLoad'));
 
 

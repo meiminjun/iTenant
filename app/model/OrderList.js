@@ -10,16 +10,31 @@ Ext.define('iTenants.model.OrderList', {
     config: {
         fields: [
             {
-                name: 'name'
+                name: 'OrderName'
             },
             {
-                name: 'date'
+                name: 'CreateTime'
             },
             {
-                name: 'number'
+                name: 'ShopID'
             },
             {
-            	name: 'state'
+            	name: 'Status'
+            },
+            {
+            	name: 'WorkID'
+            },
+            {
+            	name: 'MallCode'
+            },
+            {
+            	name: 'ShopNum'
+            },
+            {
+            	name: 'EnterTime'
+            },
+            {
+            	name: 'OrderType'
             }
         ]
     }

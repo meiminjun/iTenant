@@ -27,6 +27,7 @@ Ext.define('iTenants.controller.NavController', {
 	    		key = viewName.substr(keyIndex < 0 ? 0 : (keyIndex + 1));
 	    	if(!me[key]){
 	    		me[key] = Ext.create(viewName,{
+	    			disabled: true,
 	    			zIndex: 1
 	    		});
 	    		me.setDragInteraction(me[key]);
@@ -115,7 +116,10 @@ Ext.define('iTenants.controller.NavController', {
 			}
 			me.nowActiveViewKey.push(key);
 			if(callback && typeof callback === 'function'){
-				Ext.Function.defer(function(){callback(me[key]);},deferMs);
+				Ext.Function.defer(function(){
+					me[key].setDisabled(false);
+					callback(me[key]);
+				},deferMs);
 	    	}   	
     	}catch(e){Ext.Logger.deprecate(e);}
     },
@@ -124,12 +128,21 @@ Ext.define('iTenants.controller.NavController', {
 	 * android back鍵/返回按鈕/dragend返回統一調用此方法進行判斷返回刷新操作
 	 * Ext.Function.defer 250ms進行數據請求，不需要清空頁面（和push調用的loaddata方法一致）
 	 */
-	popToPrev : function(value) {
+	popToPrev : function(value,isNeedRefresh) {
 		try{
 			var me = this,
 				count = 1,	
 				vIndex,
 				i;
+			if(me.nowPicker && me.nowPicker.obj && !me.nowPicker.obj.isHidden() && me.nowPicker.obj.hasParent()){
+				if(me.nowPicker.hide){
+					me.nowPicker.hide();
+				};
+				me.nowPicker = null;
+				return;
+			}else{
+				me.nowPicker = null;
+			}
 			if(value){
 				if(typeof value === 'number'){
 					count = value > 0 ? (value > me.nowActiveViewKey.length ? me.nowActiveViewKey.length : value) : 1;
@@ -140,6 +153,9 @@ Ext.define('iTenants.controller.NavController', {
 			}
 			// drag和返回键count=1，返回主页count>1
 			for(i = 0; i < count; i++){
+				if( (!me.nowActiveViewKey) || me.nowActiveViewKey.length === 0){
+					return false;
+				}
 				var key = me.nowActiveViewKey[me.nowActiveViewKey.length - 1],
 					component = me[key],
 					draggable = component.draggableBehavior&&component.draggableBehavior.draggable;
@@ -171,9 +187,19 @@ Ext.define('iTenants.controller.NavController', {
 	            	}
 	            })(component,draggable);
 	            // 异步清空
-	            Ext.Function.defer(function(){me.clearCurrentPage(component);},500);
+	            Ext.Function.defer(function(){me.clearCurrentPage(component,key);},500);
 			}
-			return count > 0;
+			if(isNeedRefresh){
+				Ext.Function.defer(function(){
+					if(me.nowActiveViewKey.length > 1){
+						var view = me[me.nowActiveViewKey[me.nowActiveViewKey.length - 1]];
+						if(view.refreshPageFn){
+							view.refreshPageFn();
+						}					
+					}
+				},500);				
+			}
+			return true;
 	    }catch(e){Ext.Logger.deprecate(e);}
 	},
 	/**
@@ -181,7 +207,7 @@ Ext.define('iTenants.controller.NavController', {
 	 *@desc push动作不能异步清空，返回异步清空
 	 *@param component
 	 */
-	clearCurrentPage : function(view){
+	clearCurrentPage : function(view,key){
 		try{
 			var itemId = view.getItemId();
 			
@@ -192,31 +218,9 @@ Ext.define('iTenants.controller.NavController', {
 			iTenants.ux.CustomLoading.hide();
 			Ext.Ajax.abortAll();
 			
-			/*if(itemId == 'bandIndex'){
-				// clear swipeId arr
-	    		var bandList = view.getComponent('bandList'),
-	    			store = Ext.getStore('Bands');
-	    		if(bandList.delSwipeIds){
-	    			bandList.delSwipeIds = [];
-	    		}
-	    		view.getDraggable().resumeEvents();
-	    		// 等同store.setData(null);removeAll会将删除的record存入remove内存数组更耗时
-//	    		store.clearData();
-	    		bandList.destroy();
-			}else if(itemId == 'bandDetail'){
-				var bandImage = view.getComponent('bandImage'),
-	        		description = view.getComponent('description');
-				bandImage.destroy();
-	       	    description.destroy();
-			}*/
-			
 			// destroy childComponent or refresh page view
-			// 工单详情
-			if(itemId == 'workOrderDetails'){
-				view.getComponent('workOrderDetailsChild').destroy();
-			// 批注图片列表
-			}else if(itemId == 'postilImgList'){
-				view.getComponent('image-grid-list-panel').destroy();
+			if(view.destroyChildFn){
+				view.destroyChildFn();
 			}
 		}catch(e){Ext.Logger.deprecate(e);}
 	},

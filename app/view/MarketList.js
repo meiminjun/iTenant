@@ -5,6 +5,7 @@
  */
 Ext.define('iTenants.view.MarketList', {
 	extend: 'Ext.dataview.List',
+	require:['Ext.plugin.ListPaging','Ext.plugin.PullRefresh'],
 	xtype: 'marketList',	
 	config: {
 		itemId : 'marketList',
@@ -18,24 +19,32 @@ Ext.define('iTenants.view.MarketList', {
             directionLock: true,
             direction: 'vertical'
         },
-        store: 'MarketListStore',
+        store: 'marketListStore',
 		cls : "marketList bgCls",
-		selectedCls : '',
+		loadingText:false,
+//		selectedCls : '',
 		itemTpl: [
 	        '<div style="position:absolute;top:22px;left:11px">',
 				'<div class="avatar-img">',
-					'<img class="listImgDef" src="{ProjectImage}" />',
+					'<img class="listImgDef" src="{Image}" />',
 				'</div>', 
 			'</div>',
 			'<div class="avatar-row defaultFont-style" style="margin-left:67px;">',
-				'<div class="head text-overflow"><span class="proName">{ProjectName}</span></div>',
-				'<div class="rowscontent">{Description}</div>',
-				'<span class="num">{num}</span>',
+				'<div class="head text-overflow"><span class="proName">{MarketShortName}</span></div>',
+				'<div class="rowscontent">{Address}</div>',
+				'<span class="num">{TasksCount}</span>',
 			'</div>', 
 			'<div>',
 				'<div class="arrow-black"></div>',
 				'<div class="detailImg"></div>',
 			'</div>'
 		]
+//		plugins: [{
+//		    type: 'listpaging',
+//		    locales: {
+//		      loadMoreText: 'listPaging.loadMoreText',
+//	  	      noMoreRecordsText: 'listPaging.noMoreRecordsText'
+//		    }
+//	    }]
 	}
 });

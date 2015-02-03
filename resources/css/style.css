@@ -84,8 +84,9 @@ body {
 }
 .customToolBar .x-button-label {
 	font-size: .9em !important;
-	font-weight: 100;
+	font-weight:bold;
 }
+
 /*返回按钮样式*/
 
 .backBtnCls {
@@ -106,6 +107,7 @@ body {
 	background-image: none !important;
 	border: none !important;
 	border-radius: 0px !important;
+	font-size: .9em !important;
 }
 /*搜索文本框自定义样式*/
 
@@ -254,6 +256,36 @@ body {
 }
 .selectFieldList .x-innerhtml {
 	padding: 3px 10px !important
+}
+
+/*斜纹标题*/
+.subtitleLabel {
+	border-bottom: 2px solid #3899d6;
+	display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	background-image: url("../images/line_titleBarCls.png");
+	background-size: 4em;
+}
+.subtitleLabel>.x-innerhtml {
+	background-color: #3899d6;
+	width: auto;
+	color: #ffffff;
+	padding-left: 18px;
+	padding-right: 10px;
+	font-size: 14px;
+	line-height: 23px;
+	height: 21px;
+	position: relative;
+}
+.subtitleLabel>.x-innerhtml::after {
+	content: '';
+	width: 0px;
+	border-right: 10px solid transparent;
+	border-bottom: 21px solid #3899d6;
+	height: 0px;
+	left: 100%;
+	position: absolute;
 }
 /*工单列表选择项列表*/
 
@@ -543,9 +575,15 @@ List页面 设置infinite时的loadmore按钮高度
 	background-color: #3899D6;
 }
 .actonSheetCls .actionsheetBtn {
-	border-radius: 5px;
 	background-image: none;
-	background: #FFFFFF;
+	background-color: #ffffff;
+	margin: 6px 20px 6px 20px;
+	border: none;
+	height: 44px;
+}
+.actonSheetCls .actionsheetBtn .x-button-label{
+	font-weight : normal !important;
+	font-size: 18px !important
 }
 /*.actionsheetBtn {
 	border: 3px solid rgba(0, 0, 0, .4);
@@ -585,8 +623,8 @@ List页面 设置infinite时的loadmore按钮高度
 
 }
 .listImgDef {
-	width: 44px;
-	height: 44px;
+	width: 70px;
+	height: 70px;
 	margin-top: -1px
 }
 .arrow-black {
@@ -603,7 +641,7 @@ List页面 设置infinite时的loadmore按钮高度
 	float: right;
 	position: relative;
 	background: url("../images/details.png") no-repeat;
-	top: -60px;
+	top: -57px;
 	background-size: 23px 23px;
 	left: 2px;
 }
@@ -617,11 +655,12 @@ List页面 设置infinite时的loadmore按钮高度
 	width: 25px;
 	margin-right: 6px;
 	text-align: center;
+	font-weight: bold;
 }
 .marketList .proName {
 	font-family: "微软雅黑";
 	color: #003e00;
-	font-size: 13px;
+	font-size: 15px;
 }
 .marketList .x-list-item {
 	background-color: white
@@ -685,7 +724,7 @@ List页面 设置infinite时的loadmore按钮高度
 .repairOrderItemsConLeft {
 	font-size: 14px;
 	color: #999;
-	padding: 10px;
+	padding: 10px 18px;
 	word-break: break-word;
 	color: #474747;
 	background: white;
@@ -694,7 +733,7 @@ List页面 设置infinite时的loadmore按钮高度
 	text-align: right;
 	font-size: 14px;
 	color: #999;
-	padding: 10px;
+	padding: 10px 18px;
 	word-break: break-word;
 	color: #474747;
 	background: white;
@@ -702,8 +741,8 @@ List页面 设置infinite时的loadmore按钮高度
 .inspectCls .titleBarCls {
 	border: none;
 }
-.inspectCls .checkDetailCls .x-innerhtml {
-	padding: 12px 0px !important;
+.inspectCls .checkDetailCls .x-inner .x-innerhtml {
+	padding: 12px 0px;
 }
 .inspectCls .x-list .x-list-item.x-item-selected.x-list-item-tpl {
 	background: none;
@@ -712,6 +751,10 @@ List页面 设置infinite时的loadmore按钮高度
 }
 .inspectCls .imgCont {
 	margin-top: 6px;
+	margin-left: -4px;
+}
+.inspectCls .imgArr {
+	margin-left:4px;
 }
 .inspectListCls .itemcls .x-innerhtml {
 	padding: 12px 0px !important;
@@ -720,7 +763,7 @@ List页面 设置infinite时的loadmore按钮高度
 	background : white
 }
 .problemList-Div .problemList-row {
-	margin: 0px 8px 0px 40px;
+	margin: 0px 8px 0px 50px;
 }
 .problemList-img {
 	float: left;
@@ -728,7 +771,7 @@ List页面 设置infinite时的loadmore按钮高度
 	border-radius: .2em;
 	width: 32px;
 	height: 32px;
-	margin: -.5em auto auto -.3em;
+	margin: -.5em auto auto .4em;
 }
 .problemName {
 	font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;";
@@ -744,13 +787,13 @@ List页面 设置infinite时的loadmore按钮高度
 	color: #474747;
 }
 .latestReply-Div {
-	padding: 8px;
-	padding-left: 34px;
+	padding: 12px;
+	padding-left: 50px;
 }
 .latestReply-Div .content {
 	font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;
-	font-size: 12px;
-	padding: 7px;
+	font-size: 15px;
+	padding: 0px;
 	color: #474747;
 }
 .photos {
@@ -762,6 +805,9 @@ List页面 设置infinite时的loadmore按钮高度
 }
 .defectTextarea {
 	margin: .5em .5em .5em .5em;
+}
+.bgCls .send .x-toolbar .x-button .x-button-label{
+	font-weight: bold;
 }
 /*
    	工单列表title
@@ -785,6 +831,7 @@ List页面 设置infinite时的loadmore按钮高度
 
 .orderList .state {
 	heigth: 30px;
+	background: white;
 }
 .orderList .state .segBtn {
 	background: white !important;
@@ -963,6 +1010,7 @@ search输入框样式
 	font-size: 14px;
 	color: rgb(147, 156, 152);
 	line-height: 28px;
+	min-height: 28px;
 }
 .orderList .orderListItem .third .date {
 	font-size: 13px;
@@ -976,6 +1024,10 @@ search输入框样式
 	background-position: 100% 48%;
 	background-size: 16px;
 }
+
+.orderList .x-list-emptytext{
+	background: white;
+}
 /*
 handing over
 */
@@ -986,7 +1038,7 @@ handing over
 	font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;
 	color: #414042;
 }
-.handingOver .titlebar {
+.handingOver .titlebar, .preInspection .titlebar {
 	background-color: #3899d6;
 	background-image: none;
 	font-size: 17px !important;
@@ -994,11 +1046,12 @@ handing over
 	height: 46px;
 }
 .handingOver .titlebar .btn {
-	width: 25px;
+	width: 30px;
 	padding: 0px;
+	margin-right: 6px;
 }
 .handingOver .titlebar .iconBtn {
-	background-size: 25px;
+	background-size: 28px;
 }
 .handingOver .handingDetail .x-innerhtml>div {
 	min-height: 32px;
@@ -1038,46 +1091,20 @@ handing over
 }
 .handingOver .handingDetail .title {
 	margin-left: 55px;
-	-webkit-box-flex: 6;
-	flex: 6;
+	-webkit-box-flex: 5;
+	flex: 5;
 	font-size: 13px;
 	color: #797979;
 	line-height: 32px;
 }
 .handingOver .handingDetail .title+div {
 	margin-right: 32px;
-	-webkit-box-flex: 4;
-	flex: 4;
+	-webkit-box-flex: 5;
+	flex: 5;
 	text-align: right;
 	font-size: 13px;
 	color: #797979;
 	line-height: 32px;
-}
-.handingOver .subtitleLabel {
-	border-bottom: 2px solid #3899d6;
-	display: flex;
-	display: -webkit-box;
-	display: -ms-flexbox;
-}
-.handingOver .subtitleLabel .x-innerhtml {
-	background-color: #3899d6;
-	width: auto;
-	color: #ffffff;
-	padding-left: 18px;
-	padding-right: 10px;
-	font-size: 14px;
-	line-height: 23px;
-	height: 21px;
-	position: relative;
-}
-.handingOver .subtitleLabel .x-innerhtml::after {
-	content: '';
-	width: 0px;
-	border-right: 10px solid transparent;
-	border-bottom: 21px solid #3899d6;
-	height: 0px;
-	left: 100%;
-	position: absolute;
 }
 .handingOver .checkList {
 	background-color: #ffffff;
@@ -1109,6 +1136,9 @@ handing over
 .handingOver .checkList .state .greenState {
 	background-image: url(../images/status/third-status.png);
 }
+.handingOver .checkList .state .redState {
+	background-image: url(../images/status/fourth-status.png);
+}
 .handingOver .checkList .checkListItem .name {
 	-webkit-box-flex: 1;
 	flex: 1;
@@ -1123,7 +1153,7 @@ handing over
     padding: 5px 0px;
 }
 .handingOver .checkList .checkListItem .next {
-	width: 20px;
+	width: 40px;
 	background-repeat: no-repeat;
 	background-image: url("../images/arrow-black.png");
 	background-position: 100% 48%;
@@ -1167,6 +1197,9 @@ handing over
 }
 .handingOver .final .third {
 	margin-left: 55px;
+}
+.handingOver .final .third > img{
+	margin-right: 20px;
 }
 .checkListPicker {
 	font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;
@@ -1240,10 +1273,145 @@ handing over
 	font-size: 20px;
 	font-weight: normal;
 }
+
+.preInspectionList {
+	background-color: #ffffff;
+}
+.preInspectionList .x-list-item .x-innerhtml {
+	padding: 0px !important;
+	background-color: #ffffff;
+}
+.preInspectionList .checkListItem {
+	display: -webkit-box;
+	display: flex;
+	min-height: 33px;
+}
+.preInspectionList .state {
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	align-items: center;
+	display: -webkit-box;
+	display: flex;
+}
+.preInspectionList .state>div {
+	width: 25px;
+	height: 25px;
+	background-size: 25px;
+	margin: auto 15px auto 15px;
+}
+.preInspectionList .state .grayState {
+	background-image: url(../images/status/fifth-status.png);
+}
+.preInspectionList .state .greenState {
+	background-image: url(../images/status/third-status.png);
+}
+.preInspectionList .state .redState {
+	background-image: url(../images/status/fourth-status.png);
+}
+.preInspectionList .checkListItem .name {
+	-webkit-box-flex: 1;
+	flex: 1;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+    align-items: center;
+    color: #474747;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 5px 0px;
+}
+.preInspectionList .imgs{
+	margin-left: 55px;
+}
+.preInspectionList .imgs > img{
+	width: 50px; 
+	height: 50px;
+	margin-right: 15px;
+}
+
+/*
+handoverForm页面样式
+*/
+.handoverFormContent{
+	background: #ffffff;
+}
+.handoverForm .customToolBar .iconBtn {
+	height: 32px;
+	width: 32px;
+	background-size: 32px;
+}
+.handoverFormContent .head .title{
+	text-align: center;
+	font-weight:bold;
+}
+.handoverFormContent .head .row{
+	display: flex;
+	display: -webkit-box;
+	margin-bottom: 12px;
+}
+.handoverFormContent .head .first>.left{
+	display: flex;
+	display: -webkit-box;
+	-webkit-box-flex: 7;
+	flex: 7;
+}
+.handoverFormContent .head .first>.right{
+	display: flex;
+	display: -webkit-box;
+	-webkit-box-flex: 3;
+	flex: 3;
+}
+.handoverFormContent .head .row .data{
+	border-bottom: 1px solid;
+	margin-left: 10px;
+}
+.handoverFormContent .thirdContainer{
+	font-size: 13px;
+}
+.handoverFormContent .thirdContainer .first,.handoverFormContent .thirdContainer .second{
+	margin-top: 15px;
+}
+.handoverFormContent .thirdContainer .third{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.handoverFormContent .thirdContainer .third>div{
+	display: flex;
+	display: -webkit-box;
+}
+.handoverFormContent .thirdContainer .third>div>.content{
+	border-bottom: 1px solid;
+	min-width: 100px;
+}
+.handoverFormContent .thirdContainer .five{
+	display: flex;
+	display: -webkit-box;
+	margin-top: 30px;
+}
+.handoverFormContent .thirdContainer .five .content{
+	border-bottom: 1px solid;
+	width: 150px;
+	height: 75px;
+}
+.handoverFormContent .thirdContainer .five > .left{
+	width: 0px;
+	-webkit-box-flex: 1;
+	flex: 1;
+	margin-right: 10px;
+}
+.handoverFormContent .thirdContainer .five > .right{
+	width: 0px;
+	-webkit-box-flex: 1;
+	flex: 1;
+}
+.handoverFormContent .thirdContainer .six{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
 /*批註圖片網格*/
 
 .image-grid-list-panel {
-	margin-top: 6px
+	margin-top: -20px
 }
 .image-grid-list-panel .image-grid-list-imageouter {
 	position: relative;
@@ -1262,7 +1430,165 @@ handing over
 	background-size: contain
 }
 /*free draw*/
-
 .x-chart-watermark {
 	display: none
+}
+
+/*标注按钮*/
+.postilBtnCls {
+	width: 26px !important;
+	height: 26px !important;
+	background-size: 22px !important;
+	background-color: transparent !important;
+	background-image: url(../images/modify.png) !important;
+}
+/*标注图片title*/
+.image-grid-list-image .x-innerhtml{
+	width: 100%;
+	margin-top: 75px;
+	font-size: .7em;
+	word-break: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	min-height: 40px;
+	max-height: 40px
+}
+
+.textAreaInputCls .x-input-el{
+	/*border: 1px solid #ccc;*/
+	font-size:15px;
+	-webkit-text-fill-color: initial;
+}
+
+.informationHeadImg {
+	width: 25px;
+	height: 25px;
+	float: left;
+	position: relative;
+	background: url("../images/head.png") no-repeat;
+	top: 10px;
+	background-size: 17px 17px;
+	margin-left:15px;
+}
+.tenantInformation {
+	padding : 5px 18px;
+	padding-left:40px;
+	font-size: 14px;
+	color: #999;
+}
+.tenantInformation .post{
+	text-align : left;
+	font-weight:bold;
+	color : #474747;
+	line-height:30px;
+}
+.tenantInformation .name{
+	text-align : left;
+	color : #474747;
+}
+.tenantInformation .contacts {
+	display: -webkit-box;
+	display: flex;
+	color : #474747
+}
+.tenantInformation .contacts .mobile{
+	-webkit-box-flex: 5;
+	flex: 5;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+    align-items: center;
+    text-align : left;
+    line-height: 20px;
+    padding: 5px 0px;
+    word-break: break-all;
+    width : 0;
+}
+.tenantInformation .contacts .email{
+	-webkit-box-flex: 5;
+	flex: 5;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+    align-items: center;
+    text-align : right;
+    line-height: 20px;
+    padding: 5px 0px;
+    word-break: break-all;
+    width : 0;
+}
+
+/*HandOverForm Table style*/
+.handOverformCls {
+	background-color: #ffffff;
+	border-bottom: 1px solid #D2D2D2;
+}
+.handOverformCls .subContent {
+	font-size: 1.2em;
+	margin-top: 5px
+}
+.handOverformCls .table_subTitle {
+	font-size: 1em;
+	margin-top: 5px;
+	font-weight: bold;
+}
+.handOverformCls table {
+	width: 100%;
+	border-collapse: separate;
+	table-layout: fixed;
+	font-size: 17px;
+	color: #3F4E5E;
+	background-color: #EEE;
+	border-bottom: 1px solid #CECECE;
+	border-left: 1px solid #CECECE;
+	margin-top: 5px;
+}
+.handOverformCls table.lblProgress tbody {
+	background-color: white
+}
+.handOverformCls table.lblProgress td.phaseL {
+	background-color: white;
+	text-align: left;
+	width: 50%;
+	min-height: 30px;
+	vertical-align: middle;
+	padding-left: 5px;
+}
+.phaseDivL {
+	word-break: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 8;
+	-webkit-box-orient: vertical;
+	min-height: 30px;
+}
+.handOverformCls table.lblProgress td.phaseC {
+	background: white;
+	text-align: center;
+	width: 50%;
+	min-height: 30px;
+	vertical-align: middle;
+}
+.handOverformCls tbody td {
+	border-right: 1px solid #CECECE;
+	border-top: 1px solid #CECECE;
+}
+.handOverformCls td {
+	position: relative;
+	background-image: none;
+	background-color: white;
+	vertical-align: top;
+	font-size: 0.7em;
+}
+
+.handOverformCls .plan>img{
+	width: 50px;
+	height: 50px;
+}
+.handOverformCls .imgs>img{
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
 }

@@ -7,7 +7,11 @@
 Ext.define('iTenants.view.OrderList', {
 	extend: 'Ext.dataview.List',
 	xtype: 'orderList',
-	requires: ['Ext.field.Search', 'Ext.plugin.ListPaging', 'Ext.plugin.PullRefresh'],
+	requires: ['Ext.field.Search', 
+	           'Ext.plugin.ListPaging', 
+	           'Ext.plugin.PullRefresh',
+	           'Ext.SegmentedButton',
+	           'Ext.Label'],
 
     config: {
 	    itemId: 'orderList',
@@ -18,13 +22,17 @@ Ext.define('iTenants.view.OrderList', {
 		allowDeselect: false,
 		scrollToTopOnRefresh: false,
 		
+		store: 'orderListStore',
 		cls: 'orderList bgCls',
+		emptyText: 'orderIndex.emptyText',
+		loadingText : false,
 		scrollable: {
 			directionLock: true,
 			direction: 'vertical'
 		},
 		items: [{
 			xtype: 'searchfield',
+			name: 'orderListSearch',
 			cls: 'searchfield',
 			placeHolder: 'keywords',
 			docked: 'top'
@@ -73,7 +81,7 @@ Ext.define('iTenants.view.OrderList', {
 				iconCls : 'enter',
 				iconMask : true,
 				iconAlign : 'center',
-		    	name: 'tasks',
+		    	name: 'enter',
 		    	pressedCls : '',
 		    	badgeCls: 'orderCount',
 		    	flex: 1
@@ -84,7 +92,7 @@ Ext.define('iTenants.view.OrderList', {
 		    	iconCls : 'out',
 				iconMask : true,
 				iconAlign : 'center',
-		    	name: 'completed',
+		    	name: 'out',
 		    	pressedCls : '',
 		    	badgeCls: 'orderCount',
 		    	flex: 1
@@ -95,16 +103,16 @@ Ext.define('iTenants.view.OrderList', {
 		    
 		    '<div class="orderListItem">',
 		    	'<div class="first">',
-		    		'<tpl if="state==0">',
+		    		'<tpl if="Status==0">',
 		    			'<div class="grayState"></div>',
 		    		'<tpl else>',
 		    			'<div class="greenState"></div>',
 		    		'</tpl>',
 		    	'</div>',
-		    	'<div class="second">{name}</div>',
+		    	'<div class="second">{OrderName}</div>',
 		    	'<div class="third">',
-		    		'<div class="number">{number}</div>',
-		    		'<div class="date">{date}</div>',
+		    		'<div class="number">{ShopNum}</div>',
+		    		'<div class="date">{[iTenants.util.PubOperation.dataFormatLogogram(values.CreateTime,"")]}</div>',
 		    	'</div>',
 		    	'<div class="fourth"></div>',
 		    '</div>'
@@ -113,8 +121,8 @@ Ext.define('iTenants.view.OrderList', {
 		    xclass: 'Ext.plugin.ListPaging',
 		    autoPaging: false,
 		    locales: {
-		      loadMoreText: 'listPaging.loadMoreText',
-	  	      noMoreRecordsText: 'listPaging.noMoreRecordsText'
+		      loadMoreText: 'orderIndex.loadMoreText',
+	  	      noMoreRecordsText: 'orderIndex.noMoreRecordsText'
 		    }
 	    }]
   }

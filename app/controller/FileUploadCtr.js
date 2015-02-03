@@ -28,41 +28,74 @@ Ext.define('iTenants.controller.FileUploadCtr', {
 	 */
 	photographFun : function() {
 		if (!iTenants.util.PubOperation.isGoogleChrome()) {
-			navigator.camera.getPicture(function(data) {
-				if (Ext.getDom('myImage1').style.display == 'none') {
-					Ext.getDom('iDelBtn1').style.display = "block";
-					// Ext.getDom('myImage1').src =
-					// "data:image/jpeg;base64,"+data;
-					Ext.getDom('myImage1').src = "data:image/jpeg;base64," + data;;
-					Ext.getDom('myImage1').style.display = 'inline';
-					console.log(data);
-					window.localStorage.setItem("_globleParam_imgeUrl1", data);
-				} else if (Ext.getDom('myImage2').style.display == 'none') {
-					Ext.getDom('iDelBtn2').style.display = "block";
-					Ext.getDom('myImage2').src = "data:image/jpeg;base64," + data;;
-					Ext.getDom('myImage2').style.display = 'inline';
-					window.localStorage.setItem("_globleParam_imgeUrl2", data);
-				} else if (Ext.getDom('myImage3').style.display == 'none') {
-					Ext.getDom('iDelBtn3').style.display = "block";
-					Ext.getDom('myImage3').src = "data:image/jpeg;base64," + data;;
-					Ext.getDom('myImage3').style.display = 'inline';
-					window.localStorage.setItem("_globleParam_imgeUrl3", data);
-				} else {
-					navigator.notification.alert(Global.getTipsMsg('photoMsg'),
-							null, Global.getTipsMsg('Prompt'), Global
-									.getTipsMsg('OK'));
-				}
+			if(Ext.os.is.iOS){
+              	Cordova.exec(function(data) {
+              		if (Ext.getDom('myImage1').style.display == 'none') {
+    					Ext.getDom('iDelBtn1').style.display = "block";
+    					// Ext.getDom('myImage1').src =
+    					// "data:image/jpeg;base64,"+data;
+    					Ext.getDom('myImage1').src = "data:image/jpeg;base64," + data;;
+    					Ext.getDom('myImage1').style.display = 'inline';
+    					console.log(data);
+    					window.localStorage.setItem("_globleParam_imgeUrl1", data);
+    				} else if (Ext.getDom('myImage2').style.display == 'none') {
+    					Ext.getDom('iDelBtn2').style.display = "block";
+    					Ext.getDom('myImage2').src = "data:image/jpeg;base64," + data;;
+    					Ext.getDom('myImage2').style.display = 'inline';
+    					window.localStorage.setItem("_globleParam_imgeUrl2", data);
+    				} else if (Ext.getDom('myImage3').style.display == 'none') {
+    					Ext.getDom('iDelBtn3').style.display = "block";
+    					Ext.getDom('myImage3').src = "data:image/jpeg;base64," + data;;
+    					Ext.getDom('myImage3').style.display = 'inline';
+    					window.localStorage.setItem("_globleParam_imgeUrl3", data);
+    				} else {
+    					navigator.notification.alert(Global.getTipsMsg('photoMsg'),
+    							null, Global.getTipsMsg('Prompt'), Global
+    									.getTipsMsg('OK'));
+    				}
+				}, null, "CameraPostil", "takePicture", [ "1", "0" ]);
+				// 1代表照相机、0代表相册获取图片 //0代表base64 //1代表url
+			}else{
+				var quality = 50;
+			    var destinationType = 0;
+			    var sourceType = 1;
+			    var targetWidth = Global.width;
+			    var targetHeight = Global.height;
+			    var encodingType = 0;
+			    var mediaType = 0;
+			    var allowEdit = 1;
+			    var correctOrientation = true;
+			    var saveToPhotoAlbum = false;
 
-			}, function(error) {
-				console.log('error', error);
-				return;
-			}, {
-				quality : 80,
-				sourceType : 1,
-				destinationType : 0,
-				targetWidth : 720,
-				targetHeight : 1280
-			});
+			    var args = [quality, destinationType, sourceType, targetWidth, targetHeight, encodingType,
+			                mediaType, allowEdit, correctOrientation, saveToPhotoAlbum];
+			    
+				Cordova.exec(function(data){
+					if (Ext.getDom('myImage1').style.display == 'none') {
+    					Ext.getDom('iDelBtn1').style.display = "block";
+    					// Ext.getDom('myImage1').src =
+    					// "data:image/jpeg;base64,"+data;
+    					Ext.getDom('myImage1').src = "data:image/jpeg;base64," + data;;
+    					Ext.getDom('myImage1').style.display = 'inline';
+    					console.log(data);
+    					window.localStorage.setItem("_globleParam_imgeUrl1", data);
+    				} else if (Ext.getDom('myImage2').style.display == 'none') {
+    					Ext.getDom('iDelBtn2').style.display = "block";
+    					Ext.getDom('myImage2').src = "data:image/jpeg;base64," + data;;
+    					Ext.getDom('myImage2').style.display = 'inline';
+    					window.localStorage.setItem("_globleParam_imgeUrl2", data);
+    				} else if (Ext.getDom('myImage3').style.display == 'none') {
+    					Ext.getDom('iDelBtn3').style.display = "block";
+    					Ext.getDom('myImage3').src = "data:image/jpeg;base64," + data;;
+    					Ext.getDom('myImage3').style.display = 'inline';
+    					window.localStorage.setItem("_globleParam_imgeUrl3", data);
+    				} else {
+    					navigator.notification.alert(Global.getTipsMsg('photoMsg'),
+    							null, Global.getTipsMsg('Prompt'), Global
+    									.getTipsMsg('OK'));
+    				}
+				},null,"CameraPostil", "takePicture",args);	
+			}
 		} else {
 			Ext.Msg.alert('手机上才能使用该功能.');
 		}
@@ -74,41 +107,74 @@ Ext.define('iTenants.controller.FileUploadCtr', {
 	 */
 	albumFun : function() {
 		if (!iTenants.util.PubOperation.isGoogleChrome()) {
-			navigator.camera.getPicture(function(data) {
-				if (Ext.getDom('myImage1').style.display == 'none') {
-					Ext.getDom('iDelBtn1').style.display = "block";
-					// Ext.getDom('myImage1').src =
-					// "data:image/jpeg;base64,"+data;
-					Ext.getDom('myImage1').src = "data:image/jpeg;base64," + data;
-					Ext.getDom('myImage1').style.display = 'inline';
-					console.log(data);
-					window.localStorage.setItem("_globleParam_imgeUrl1", data);
-				} else if (Ext.getDom('myImage2').style.display == 'none') {
-					Ext.getDom('iDelBtn2').style.display = "block";
-					Ext.getDom('myImage2').src = "data:image/jpeg;base64," + data;;
-					Ext.getDom('myImage2').style.display = 'inline';
-					window.localStorage.setItem("_globleParam_imgeUrl2", data);
-				} else if (Ext.getDom('myImage3').style.display == 'none') {
-					Ext.getDom('iDelBtn3').style.display = "block";
-					Ext.getDom('myImage3').src = "data:image/jpeg;base64," + data;;
-					Ext.getDom('myImage3').style.display = 'inline';
-					window.localStorage.setItem("_globleParam_imgeUrl3", data);
-				} else {
-					navigator.notification.alert(Global.getTipsMsg('photoMsg'),
-							null, Global.getTipsMsg('Prompt'), Global
-									.getTipsMsg('OK'));
-				}
+			if(Ext.os.is.iOS){
+              	Cordova.exec(function(data) {
+              		if (Ext.getDom('myImage1').style.display == 'none') {
+    					Ext.getDom('iDelBtn1').style.display = "block";
+    					// Ext.getDom('myImage1').src =
+    					// "data:image/jpeg;base64,"+data;
+    					Ext.getDom('myImage1').src = "data:image/jpeg;base64," + data;;
+    					Ext.getDom('myImage1').style.display = 'inline';
+    					console.log(data);
+    					window.localStorage.setItem("_globleParam_imgeUrl1", data);
+    				} else if (Ext.getDom('myImage2').style.display == 'none') {
+    					Ext.getDom('iDelBtn2').style.display = "block";
+    					Ext.getDom('myImage2').src = "data:image/jpeg;base64," + data;;
+    					Ext.getDom('myImage2').style.display = 'inline';
+    					window.localStorage.setItem("_globleParam_imgeUrl2", data);
+    				} else if (Ext.getDom('myImage3').style.display == 'none') {
+    					Ext.getDom('iDelBtn3').style.display = "block";
+    					Ext.getDom('myImage3').src = "data:image/jpeg;base64," + data;;
+    					Ext.getDom('myImage3').style.display = 'inline';
+    					window.localStorage.setItem("_globleParam_imgeUrl3", data);
+    				} else {
+    					navigator.notification.alert(Global.getTipsMsg('photoMsg'),
+    							null, Global.getTipsMsg('Prompt'), Global
+    									.getTipsMsg('OK'));
+    				}
+				}, null, "CameraPostil", "takePicture", [ "0", "0" ]);
+				// 1代表照相机、0代表相册获取图片 //0代表base64 //1代表url
+			}else{
+				var quality = 50;
+			    var destinationType = 0;
+			    var sourceType = 0;
+			    var targetWidth = Global.width;
+			    var targetHeight = Global.height;
+			    var encodingType = 0;
+			    var mediaType = 0;
+			    var allowEdit = 1;
+			    var correctOrientation = true;
+			    var saveToPhotoAlbum = false;
 
-			}, function(error) {
-				console.log('error', error);
-				return;
-			}, {
-				quality : 80,
-				sourceType : 0,
-				destinationType : 0,
-				targetWidth : 720,
-				targetHeight : 1280
-			});
+			    var args = [quality, destinationType, sourceType, targetWidth, targetHeight, encodingType,
+			                mediaType, allowEdit, correctOrientation, saveToPhotoAlbum];
+			    
+				Cordova.exec(function(data){
+					if (Ext.getDom('myImage1').style.display == 'none') {
+    					Ext.getDom('iDelBtn1').style.display = "block";
+    					// Ext.getDom('myImage1').src =
+    					// "data:image/jpeg;base64,"+data;
+    					Ext.getDom('myImage1').src = "data:image/jpeg;base64," + data;;
+    					Ext.getDom('myImage1').style.display = 'inline';
+    					console.log(data);
+    					window.localStorage.setItem("_globleParam_imgeUrl1", data);
+    				} else if (Ext.getDom('myImage2').style.display == 'none') {
+    					Ext.getDom('iDelBtn2').style.display = "block";
+    					Ext.getDom('myImage2').src = "data:image/jpeg;base64," + data;;
+    					Ext.getDom('myImage2').style.display = 'inline';
+    					window.localStorage.setItem("_globleParam_imgeUrl2", data);
+    				} else if (Ext.getDom('myImage3').style.display == 'none') {
+    					Ext.getDom('iDelBtn3').style.display = "block";
+    					Ext.getDom('myImage3').src = "data:image/jpeg;base64," + data;;
+    					Ext.getDom('myImage3').style.display = 'inline';
+    					window.localStorage.setItem("_globleParam_imgeUrl3", data);
+    				} else {
+    					navigator.notification.alert(Global.getTipsMsg('photoMsg'),
+    							null, Global.getTipsMsg('Prompt'), Global
+    									.getTipsMsg('OK'));
+    				}
+				},null,"CameraPostil", "takePicture",args);	
+			}
 		} else {
 			Ext.Msg.alert('手机上才能使用该功能.');
 		}
@@ -304,31 +370,120 @@ Ext.define('iTenants.controller.FileUploadCtr', {
 	    }
     },
 	/**
-	 * 检查点缩略图查看图片
+	 * 批注图纸预览（一张）
 	 * 
 	 * @param isBase64
-	 * @param pathStr
+	 * @param path
+	 * @param title
 	 * @param currentIndex
 	 * @param hasDomain
 	 */
-	viewPic : function(isBase64, pathStr, currentIndex,hasDomain) {
-		navCtr.pushToNext('iTenants.view.CarouselView', function(view) {
-			var pathArr = pathStr.toString().split('|'),subItem = [],src;
-			Ext.Array.each(pathArr, function(path) {
-				if(hasDomain && hasDomain === true){
-					src = path;
-				}else{
-					src = isBase64 ? "data:image/png;base64," + path : Global.domain+"/"+decodeURIComponent(path);
-				}
-				console.log(src);
-				subItem.push({
+	viewPostilPic : function(isBase64, path, title, currentIndex,hasDomain) {
+		var me = this;
+    	navCtr.pushToNext('iTenants.view.PostilImgView', function(view) {
+    		view.down('titlebar').setTitle(title);
+    		var src;
+			if(hasDomain && hasDomain === true){
+				src = path;
+			}else{
+				src = isBase64 ? "data:image/png;base64," + path : Global.domain+"/"+decodeURIComponent(path);
+			}
+//			console.log(src);
+			if(!view.getComponent('imageView')){
+				view.add({
 					xtype : 'imageviewer',
+					itemId : 'imageView',
 					imageSrc : src,
 					style : 'background : rgba(53, 49, 49,1)'
 				});
-			});
-			view.down('carousel').setItems(subItem);
-			view.down('carousel').setActiveItem(currentIndex - 1);
+			}
+			me.urlImg = src;
+			
+			// 检查点图纸标注才显示标注按钮
+			postilBtn = view.down('titlebar button[itemId=postilBtn]');
+			if(handingOverCtr.imageGridSuperior == 'modifyPostil'){
+				postilBtn.show();
+			}else{
+				postilBtn.hide();
+			}
 		});
+	},
+	/**
+	 * carousel缩略图预览
+	 * 
+	 * @param isBase64
+	 * @param path
+	 * @param currentIndex
+	 * @param hasDomain
+	 */
+	viewPic : function(isBase64, path, currentIndex,hasDomain) {
+		var pathArr = path.toString().split('|'),
+			subItem = [],
+			src;
+		if (this.carouselView) {
+			this.carouselView.destroy();
+		}
+		this.carouselView = Ext.create('iTenants.view.CarouselView',{
+			zIndex: 1
+		});
+		Ext.Array.each(pathArr, function(path) {
+			if(hasDomain && hasDomain === true){
+				src = isBase64 ? "data:image/png;base64," + path : Global.domain + "/" + decodeURIComponent(path);
+			}else{
+				src = isBase64 ? "data:image/png;base64," + path : decodeURIComponent(path);
+			}
+//			console.log(src);
+			subItem.push({
+				xtype : 'imageviewer',
+				imageSrc : src,
+				style : 'background : rgba(53, 49, 49,1)'
+			});
+		});
+		this.carouselView.down('carousel').setItems(subItem);
+		this.carouselView.down('carousel').setActiveItem(currentIndex - 1);
+		Ext.Viewport.add(this.carouselView);
+		this.carouselView.show();
+	},
+	/**
+	 * 删除相机或拍照图片
+	 * @param num
+	 */
+	delPic : function(num) {
+		var numStr = num.toString(),
+			path = window.localStorage.getItem("_globleParam_imgeUrl" + numStr);
+
+		if (!Ext.isEmpty(path)) {
+			Ext.getDom('iDelBtn' + numStr).style.display = "none";
+			Ext.getDom('myImage' + numStr).src = "data:image/jpeg;base64,";
+			Ext.getDom('myImage' + numStr).style.display = 'none';
+			// clear localstorage
+			window.localStorage.removeItem("_globleParam_imgeUrl" + numStr);
+		}
+	},
+	/**
+	 * 删除批注缩略图
+	 * @param num
+	 */
+	delPostilPic : function(num){
+		var numStr = num.toString(),
+			path = window.localStorage.getItem("_globleParam_postilImgeUrl" + numStr);
+		
+		if (!Ext.isEmpty(path)) {
+			Ext.getDom('postilDelBtn' + numStr).style.display = "none";
+			Ext.getDom('postilImage' + numStr).src = "data:image/jpeg;base64,";
+			Ext.getDom('postilImage' + numStr).style.display = 'none';
+			// clear localstorage
+			window.localStorage.removeItem("_globleParam_postilImgeUrl" + numStr);
+		}
+	},
+	/**
+	 * 清空相片和批注图纸
+	 */
+	clearPic : function(){
+		var me = fileUploadCtr;
+		me.delPic(1);
+		me.delPic(2);
+		me.delPic(3);
+		me.delPostilPic(1);
 	}
 });

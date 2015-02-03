@@ -1,17 +1,25 @@
 /**
- * CarouselView
+ * carousel图片预览
+ * @class iTenants.view.CarouselView
+ * @author duwei
+ * @date 2015-01-15
  */
 Ext.define('iTenants.view.CarouselView', {
 	extend : 'Ext.Container',
 	xtype : 'carouselView',
 	requires : ['Ext.carousel.Carousel'],
 	config : {
-		layout : 'fit',
+		autoDestroy: false,
+		itemId: 'carouselView',
+		scrollable: false,
+	    layout : 'fit',
+	    showAnimation: 'fadeIn',
+		hideAnimation: null,
         items:[{
             xtype: 'titlebar',
             docked: 'top',
             cls : 'customToolBar',
-            title : 'Floor Plan',
+            title : 'View',
             items:[{
                 xtype : 'button',
                 ui:'plain',
@@ -19,7 +27,8 @@ Ext.define('iTenants.view.CarouselView', {
                 iconMask:true,
                 align : 'left',
                 handler : function(){
-            		navCtr.popToPrev();
+            		// android back要加入判断
+                	fileUploadCtr.carouselView.hide();
                 }
             }]
         },{

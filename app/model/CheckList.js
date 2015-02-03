@@ -9,10 +9,19 @@ Ext.define('iTenants.model.CheckList', {
     config: {
         fields: [
             {
-                name: 'name'
+                name: 'CheckPoint'
             },
             {
-            	name: 'state'
+                name: 'CheckPointDes'
+            },
+            {
+            	name: 'Status'
+            },
+            {
+            	name: 'CheckItemID'
+            },
+            {
+            	name: 'CheckPointID'
             }
         ]
     }

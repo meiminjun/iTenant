@@ -79,7 +79,12 @@ Ext.define('Ext.ux.ImageGridList.view.Image', {
      */
     toggleChecked: function(model){
 
-        var selected = model.get('selected');
+//        var selected = model.get('selected');
 //        model.set('selected',!selected);
+        
+		// base64 view test
+		var path = model.get('url'),
+			title = model.get('title');
+		fileUploadCtr.viewPostilPic(true,path,title,1,true);
     }
 });

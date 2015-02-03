@@ -29,7 +29,7 @@ Ext.define('iTenants.view.Main', {
 			},
 			{
 				xtype : 'marketList',
-				flex : 8
+				flex : 1
 			}
         ]
     }

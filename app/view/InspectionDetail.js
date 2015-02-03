@@ -11,11 +11,12 @@ Ext.define('iTenants.view.InspectionDetail', {
 	    'Ext.Button',
 		'iTenants.view.InspectList'
 	],
-
+	
 	config: {
 		itemId: 'InspectionDetail',
 		layout: 'vbox',
 		cls:'inspectCls',
+		autoDestroy:false,
 		items: [{
 			xtype: 'titlebar',
 			docked: 'top',
@@ -38,9 +39,15 @@ Ext.define('iTenants.view.InspectionDetail', {
 				text: 'Reply',
 				align : 'right',
 				handler: function(e) {
-					mainCtr.jumpToDefect();
+					handingOverCtr.jumpToDefect();
 				}
 			}]
 		}]
-	}
+	},
+    destroyChildFn: function(){
+    	var child = navCtr['InspectionDetail'].getComponent('inspectList');
+    	if(child){
+    		child.destroy();
+    	}
+    }
 });

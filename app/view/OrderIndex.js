@@ -10,7 +10,6 @@ Ext.define('iTenants.view.OrderIndex', {
     requires: [
         'iTenants.view.OrderList'
     ],
-
     config: {
     	autoDestroy: false,
         itemId: 'orderIndex',
@@ -21,6 +20,7 @@ Ext.define('iTenants.view.OrderIndex', {
         items: [
             {
                 xtype: 'titlebar',
+                name: 'title',
                 cls: 'titlebar',
                 docked: 'top',
                 title: 'Tampines Mall',
@@ -37,10 +37,16 @@ Ext.define('iTenants.view.OrderIndex', {
                         }
                     }
                 ]
-            },
-            {
-                xtype: 'orderList'
             }
         ]
+    },
+    destroyChildFn: function(){
+    	var child = navCtr['OrderIndex'].getComponent('orderList');
+    	if(child){
+    		child.destroy();
+    	}
+    },
+    refreshPageFn: function(){
+    	orderIndexCtr.refreshOrderList();
     }
 });

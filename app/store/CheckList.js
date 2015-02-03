@@ -9,19 +9,15 @@ Ext.define('iTenants.store.CheckList', {
     config: {
 	    model: 'iTenants.model.CheckList',
 	    storeId: "checkList",
-	    data:[
-      		{
-    			state: 0,
-    			name:'Type & Cat: (TBA by Project)'
-    		},
-    		{
-    			state: 0,
-    			name:'Dimension and specification: (TBA by Project)'
-    		},
-    		{
-    			state: 0,
-    			name:'Section diagram for a typical dry partition: (TBA by Project) <br /> Layer of coating:(TBA by Project) <br /> Color Code: (TBA by Project)'
-    		}
-	    ]
+		autoLoad : false,
+		proxy : {
+			type : 'ajax',
+			url : 'resources/data/GetCheckPointList.json',
+			timeout : 50000,
+			reader : {
+				type : 'json',
+				rootProperty : 'rows'
+			}
+		},
     }
 });

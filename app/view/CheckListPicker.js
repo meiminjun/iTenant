@@ -18,7 +18,10 @@ Ext.define('iTenants.view.CheckListPicker', {
 			}, {
 				xtype: 'button',
 				cls: 'btn',
-				text: 'Ok'
+				text: 'Ok',
+				handler : function(){
+//					inspectCtr.checkOKReplyFn();
+				}
 			}, {
 				xtype: 'button',
 				cls: 'btn defectBtn',

@@ -182,7 +182,7 @@ Ext.define('iTenants.util.PubOperation', {
 	            ajaxConfig : {
 	                method : 'GET'
 	            },
-	            language   : 'zh-cn',
+	            language   : 'en-us',
 	            tpl        : 'locales/{locale}.json',
 	            type       : 'ajax'
 	        });
@@ -203,15 +203,15 @@ Ext.define('iTenants.util.PubOperation', {
 		}else{
 			//获取语言缓存数据
 			iTenants.util.PubOperation.offlineAccess('iTenantsLanguage',null,function(result){
-				if(result == ''){
-	    			result = 'zh-cn';
-	    		}
-	    		Global.language = result;
+//				if(result == ''){
+//	    			result = 'en-us';
+//	    		}
+	    		Global.language = 'en-us';
 	    		iTenants.ux.Manager.setConfig({
 		            ajaxConfig : {
 		                method : 'GET'
 		            },
-		            language   : result,
+		            language   : 'en-us',
 		            tpl        : 'locales/{locale}.json',
 		            type       : 'ajax'
 		        });
@@ -320,9 +320,9 @@ Ext.define('iTenants.util.PubOperation', {
             
 			// 设置请求参数
 			var extraparams = this.pushExtraParams(params);
-			if (key == 'drafts') {
+			if (key == 'checkReply') {
 				// 检查编辑提示数据提交中
-				iTenants.util.PubOperation.showLoadMask(Global.getTipsMsg('dataSubmission').format({dfCurrentCnt : Global.dfCurrentCnt,dfTotal : Global.dfTotal}));
+				iTenants.util.PubOperation.showLoadMask(Global.getTipsMsg('submissionMsg'));
 			} else {
 				// default loading data
 				iTenants.util.PubOperation.showLoadMask();
@@ -344,7 +344,7 @@ Ext.define('iTenants.util.PubOperation', {
 				callback : function(operation, success, response) {
 					if (success) {
                         // 检查返回数据是否为空/请求成功返回错误信息处理
-						iTenants.util.PubOperation.emptyDataOperation(null,response, success);
+//						iTenants.util.PubOperation.emptyDataOperation(null,response, success);
                         if(loadFormCache){
                         	iTenants.util.PubOperation.onlineLoad(key,null,response.responseText);
                         }
@@ -396,21 +396,25 @@ Ext.define('iTenants.util.PubOperation', {
 			store.loadPage(1, {
 				callback : function(record, operation, success) {
 					iTenants.util.PubOperation.hideLoadMask();
-					if(operation.getResponse()){
-						response = Ext.JSON.decode(operation.getResponse().responseText);
-						rows = response.rows;
+					var response = operation.getResponse();
+					if(response){
+						if(!response.responseText){
+							response = {};
+						}else{
+							response = Ext.JSON.decode(response.responseText);	
+						}						
 					}
-					
+
 					if (success) {
 						// 检查返回数据是否为空/请求成功返回错误信息处理
-						iTenants.util.PubOperation.emptyDataOperation(record,operation.getResponse(), success);
+						//iTenants.util.PubOperation.emptyDataOperation(record,operation.getResponse(), success);
 					} else {
 						// 非abortAll提示
 						if(operation.error && operation.error.status != -1){
 							iTenants.util.PubOperation.showTips('requestErrorMsg','failure');
 						}
 					}
-					if(callBackFun != undefined){callBackFun(rows);}
+					if(callBackFun != undefined){callBackFun(response);}
 				},
 				scope : this
 			});
@@ -472,10 +476,9 @@ Ext.define('iTenants.util.PubOperation', {
 	 *            params 请求参数对象
 	 */
 	pushExtraParams : function(params) {
-		params.userName = Global.userAccount;
-//		params.token = Global.userToken;
-		params.langId = Global.language == 'zh-cn' ? 1 : 2;
-		params.lan = Global.language;
+		params.ADAccount = Global.userAccount;
+		params.token = Global.userToken;
+		params.language = Global.language;
 		return params;
 	},
 	/**
@@ -1060,8 +1063,8 @@ Ext.define('iTenants.util.PubOperation', {
 				if (record != null) {
 					var obj = Ext.JSON.decode(record.get('resTxt'));
 					// 首页商场json节点在PageResult.Source，其他接口部分不是
-					if(obj && obj.PageResult && obj.PageResult.Source){
-						store.setData(obj.PageResult.Source);
+					if(obj && obj.rows){
+						store.setData(obj.rows);
 					}else{
 						store.setData(null);
 					}
@@ -1090,8 +1093,8 @@ Ext.define('iTenants.util.PubOperation', {
                     if ( result != '(null)' && result != '') { 
                     	var obj = Ext.JSON.decode(result);
 //                          console.log("ok========");
-                    	if(obj && obj.PageResult && obj.PageResult.Source){
-                    		store.setData(obj.PageResult.Source);
+                    	if(obj && obj.rows){
+                    		store.setData(obj.rows);
                     	}else{
                     		store.setData(null);
                     	}
@@ -1290,50 +1293,6 @@ Ext.define('iTenants.util.PubOperation', {
     removeArrayItem:function(arr,index){
          return arr.slice(0,index).concat(arr.slice(index+1,arr.length));
     },
-    /**
-	 * 初始化检查历史
-	 * @param success
-	 * @param response
-	 */
-	ckPointHisInit : function(success,response){
-		var itellDetail = repairOrderCtr.getItellDetail(),
-			list = itellDetail.down('list[name=historyItemsList]'),
-			iTellDetailStore = Ext.getStore('ITellDetail'),
-			panel = list.down('container[name=newReplyCt]'),
-			cnt = iTellDetailStore.getCount();
-		
-		if(cnt>1){
-			if(success){iTellDetailStore.removeAt(0);panel.setData(response.rows[0]);}
-			list.refresh();
-		}else if(cnt == 1){
-			//set history data
-			iTellDetailStore.getAt(0).set('isOnly',true);
-			// set lastReply data
-			if(success){panel.setData(response.rows[0]);}
-			
-			var ckPointHisEl = list.element.down('center[name=ckPointHisCt]'),
-				lastReplyEl = list.element.down('center[name=lastReplyCt]');
-			// empty tips
-			if(ckPointHisEl){ckPointHisEl.dom.innerHTML = Global.getTipsMsg("emptyDataMsg");}
-			if(lastReplyEl){lastReplyEl.dom.innerHTML = Global.getTipsMsg("emptyDataMsg");}
-		}else{
-			iTellDetailStore.add({
-				isOnly : true
-			});
-			panel.setData({
-				isOnly : true
-			});
-			
-			var ckPointHisEl = list.element.down('center[name=ckPointHisCt]'),
-				lastReplyEl = list.element.down('center[name=lastReplyCt]');
-			// empty tips
-			if(ckPointHisEl){ckPointHisEl.dom.innerHTML = Global.getTipsMsg("emptyDataMsg");}
-			if(lastReplyEl){lastReplyEl.dom.innerHTML = Global.getTipsMsg("emptyDataMsg");}
-		}
-		
-		// loadMask hide
-		iTenants.util.PubOperation.hideLoadMask();
-	},
 	/**
 	 * ajax请求数据更新列表置空处理函数
 	 * #维保清单详情检查历史
@@ -1351,5 +1310,26 @@ Ext.define('iTenants.util.PubOperation', {
 		Ext.Function.defer(function(){
 			if(ckPointHisEl){ckPointHisEl.dom.innerHTML = Global.getTipsMsg("ungebetenEmptyMsg");}
 		},100);
+	},
+	/**
+	 * url转base64
+	 * @param url
+	 * @param callback
+	 * @param outputFormat
+	 */
+	convertImgToBase64 : function(url, callback, outputFormat){
+	    var canvas = document.createElement('CANVAS'),
+	        ctx = canvas.getContext('2d'),
+	        img = new Image;
+	    img.crossOrigin = 'Anonymous';
+	    img.onload = function(){
+	        canvas.height = img.height;
+	        canvas.width = img.width;
+	        ctx.drawImage(img,0,0);
+	        var dataURL = canvas.toDataURL(outputFormat || 'image/png');
+	        callback.call(this, dataURL);
+	        canvas = null; 
+	    };
+	    img.src = url;
 	}
 });

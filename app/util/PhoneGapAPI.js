@@ -86,7 +86,7 @@ var PhoneGapAPI = {
 		return states[networkState];
 	},
 	/**
-	 * 存储缓冲
+	 * 存储缓存
 	 * @param key
 	 * @param val
 	 */
@@ -98,7 +98,7 @@ var PhoneGapAPI = {
 		},null,"UserInfo", "WriteApplicationCacheInfo",[key,val,'iTenants']);
 	},
 	/**
-	 * 获取缓冲
+	 * 获取缓存
 	 * @param key
 	 */
 	GetCacheInfo : function(key,callback){
@@ -109,5 +109,35 @@ var PhoneGapAPI = {
 			console.log("获取本地缓存成功:" + (new Date()).getTime());
 			callback(result);
 		},null,"UserInfo", "GetApplicationCacheInfo",[key,'iTenants']);
+	},
+	/**
+	 * 批注页面
+	 * @param base64Img base64格式
+	 * @param callback
+	 */
+	getPostilImg : function(base64Img,callback){
+		if(Ext.os.is.Android){
+			Cordova.exec(function(result){
+				console.log("进入批注成功:" + (new Date()).getTime());
+				callback(result);
+			},null,"UserInfo", "GetPostilImage",[base64Img,'iTenants']);
+		}else{
+			Cordova.exec(function(result){
+				console.log("进入批注成功:" + (new Date()).getTime());
+				callback(result);
+			},null,"DoodleImage", "doodleImage",[base64Img,'iTenants']);
+		}
+	},
+	/**
+	 * 附件预览
+	 * @param Url
+	 */
+	checkAtt : function(Url) {
+		if (Ext.os.is.iOS) {
+			window.open(Url);
+			// android
+		} else if (Ext.os.is.Android) {
+		 	Cordova.exec(function(result) {}, function(fail) {}, "UserInfo", "openUrl", [Url]);
+		}
 	}
 };

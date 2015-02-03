@@ -125,9 +125,11 @@ Ext.define('Ext.ux.ImageGridList.view.List', {
         img.setRecord(model);
         img.setWidth(width);
         img.setHeight(height);
+        img.setHtml(model.get('title'));
 
         imgCmp.setStyle({
             'margin-left': marginLeft + 'px',
+            'margin-top' : '40px',
             'border-width': bWidth + 'px'
         });
         imgCmp.setWidth(width);

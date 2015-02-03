@@ -17,6 +17,8 @@ Ext.define('iTenants.model.PostilImgList', {
 
        		// image url
             {name: 'url', type: 'string'},
+            // image title
+            {name : 'title',type : 'string'}
         ] 
     }
 });

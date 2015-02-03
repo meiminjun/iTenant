@@ -38,13 +38,10 @@
 	    		        	xtype : 'button',
 	    		        	itemId : 'orderReplyBtn',
 	    		        	ui : 'customTopBtn',
-	    		        	align : 'right',
+	    		        	align : 'left',
 	    		        	text : 'Clear',
 	    		        	handler : function(){
-	    		        		var draw = Ext.getCmp('free-paint');
-	                            draw.getSurface().destroy();
-	                            draw.getSurface('overlay').destroy();
-	                            draw.renderFrame();
+	                            handingOverCtr.clearSignature();
 	    		        	}
 	    		        },
 	    		        {
@@ -56,7 +53,7 @@
 	    		        		text : 'signatureView.saveText'
 	    		        	},
 	    		        	handler : function(){
-	    		        		Ext.Msg.alert('Save');
+	    		        		handingOverCtr.goToPDFFn();
 	    		        	}
 	    		        }
 	    		    ]

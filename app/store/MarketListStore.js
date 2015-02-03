@@ -6,12 +6,21 @@ Ext.define('iTenants.store.MarketListStore',{
 		'iTenants.model.MarketList'
 	],
 	config: {
-		storeId:'MarketListStore',
-		autoLoad: true,
+		storeId:'marketListStore',
+		autoLoad: false,
 		model:'iTenants.model.MarketList',
 		proxy: {			
 			type:'ajax',
-			url:'resources/data/GetProjectList.json',
+//			extraParams: {
+//              ADAccount: Global.userAccount,
+//              Token: Global.userToken,
+//              GPSLongitude: Global.longitude,
+//              GPSLatitude:Global.latitude,
+//              language:Global.language
+//          },
+			url:'resources/data/GetMarketList.json',
+//			url:Global.domain+'/api/GetMarketList.ashx',
+			timeout : 50000,
 			reader: {
 				type:'json',
 				rootProperty:'rows'
@@ -23,6 +32,9 @@ Ext.define('iTenants.store.MarketListStore',{
 		}]
 	},
 	loadData:function(store,records,successful,operation,eOpts) {
-//		console.log(records);
+//		console.log("-------------------------------------"+records+"---------"+eOpts);
+		if (successful && operation.getResponse()) {
+			iTenants.util.PubOperation.onlineLoad("marketList",operation.getResponse());
+		}
 	}
 });

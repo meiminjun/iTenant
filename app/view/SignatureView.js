@@ -19,9 +19,10 @@ Ext.define('iTenants.view.SignatureView', {
 		hideOnMaskTap : true,
 		scroller : false,
 	    layout: 'vbox',
-	    width : '95%',
-	    height : '60%',
-	    centered : true,
+	    width : '100%',
+	    height : '55%',
+	    top : '45%',
+	    centered : false,
 		items :[{
 			xtype : 'freeDraw'
 		}]

@@ -7,6 +7,7 @@ Ext.define('iTenants.store.InspectionDetailStore', {
 	],
 	config: {
 		storeId: 'inspectionDetailStore',
+//		autoLoad: true,
 		model: 'iTenants.model.InspectionDetail',
 		proxy: {
 			type: 'ajax',

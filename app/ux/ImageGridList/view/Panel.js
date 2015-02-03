@@ -66,7 +66,7 @@ Ext.define('Ext.ux.ImageGridList.view.Panel', {
          * you set null, Ext.Img don't animate when showing
          * @type {String/Mixed}
          */
-        ImgShowAnim: {type: 'fadeIn', duration: 3000},
+        ImgShowAnim: {type: 'fadeIn', duration: 1000},
 
         items: [
             {
