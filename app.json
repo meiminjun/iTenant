@@ -47,12 +47,12 @@
             "path": "bootstrap.js",
             "x-bootstrap": true
         },
-        {
-        	"path": "app/util/phoneGap/cordova.js"
-        },
-        {
-        	"path": "app/util/phoneGap/cordova_plugins.js"
-        },
+        // {
+        // 	"path": "app/util/phoneGap/cordova.js"
+        // },
+        // {
+        // 	"path": "app/util/phoneGap/cordova_plugins.js"
+        // },
         {
         	"path": "app/util/Global.js"
         },
