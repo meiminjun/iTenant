@@ -1,5 +1,5 @@
 /**
- * @desc	工单完工填写
+ * @desc	外检检查表单
  * @author	meiminjun
  * @date	2014/12/29
  */
@@ -28,7 +28,7 @@ Ext.define('iTenants.view.ModifyView', {
 			xtype: 'titlebar',
 			docked: 'top',
 			cls: 'customToolBar',
-			title:'Modify',
+			title:'OK',
 			locales : {
 				title : 'modifyView.title'
 			},

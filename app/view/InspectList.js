@@ -1,12 +1,12 @@
 /**
- * @desc	工单检查列表
+ * @desc	工单检查历史列表
  * @author	meiminjun/duwei
  * @date	2015/1/14
  */
 Ext.define('iTenants.view.InspectList', {
 	extend: 'Ext.dataview.List',
 	xtype: 'inspectList',
-	fullscreen: true,
+	
 	requires: [
 		'Ext.Toolbar',
 		'Ext.Container',
@@ -14,7 +14,6 @@ Ext.define('iTenants.view.InspectList', {
 		'Ext.plugin.ListPaging',
 		'Ext.plugin.PullRefresh'
 	],
-
 	config: {
 		itemId: 'inspectList',
 		useSimpleItems: true,
@@ -35,7 +34,7 @@ Ext.define('iTenants.view.InspectList', {
 			'<div class="problemList-Div defaultFont-style">',
 			'<div class="problemList-row">',
 			//					'<h3 class="problemName" style="font-weight:normal;">{Description}</h3>',
-			'<h3 class="problemName" style="font-weight:normal;">Defect Found</h3>',
+			'<h3 class="problemName" style="font-weight:normal;">1. Cracks found on flooring Area <br />2.  Scratches found on flooring Area.</h3>',
 			'<div class="probleContent">',
 			'<div>',
 			'<div style="display:inline-block;width:50%">2 mins ago</div>',
@@ -68,83 +67,86 @@ Ext.define('iTenants.view.InspectList', {
 			}
 		}],
 		items: [{
-			//顶层的详情内容
 			xtype: 'container',
-			itemId: 'checkDetail',
-			name: 'checkDetail',
+			itemId : 'inspectListItem',
 			scrollDock: 'top',
-			//			height:'98px',
-			//			minHeight:'98px',
-			//			maxHeight:'200px',
-			cls: 'checkDetailCls',
-			style: 'background : white',
-			tpl: Ext.create('Ext.XTemplate',
-				'<tpl>',
-				'<div class="problemList-Div defaultFont-style">',
-				'<div class="problemList-row">',
-				'<h3 class="problemName">{CheckPoint} ({CheckPointDes})</h3>',
-				//				'<h3 class="problemName">Type & Cat;(TBA by Project)</h3>',
-				'<div class="probleContent">',
-				'<div style="display:inline-block;width:50%">Huang Cheng</div>',
-				'<div style="display:inline-block;width:50%;text-align:right;">0 min ago</div>',
-				'</div>',
-				'</div>',
-				'<div style="position:absolute;top:16px;left:8px">',
-				'<div class="problemList-img">',
-				'<img style="width:25px;height:25px;-webkit-border-radius:.2em" src="resources/images/status/third-status.png">',
-				'</div>',
-				'</div>',
-				'</div>',
-				'</tpl>', {
-					compiled: true,
-				}),
-			items: [{
+			items : [{
+				xtype : 'container',
+				itemId: 'checkDetail',
+				name: 'checkDetail',
+				cls: 'checkDetailCls',
+				style: 'background : white',
+				tpl: Ext.create('Ext.XTemplate',
+					'<tpl>',
+					'<div class="problemList-Div defaultFont-style">',
+					'<div class="problemList-row">',
+					'<h3 class="problemName" style="font-weight:normal;"><p style="font-weight: bold;">{CheckPointDes}</p>{[this.getBrHtml(values.CheckPoint)]}</h3>',
+					//				'<h3 class="problemName">Type & Cat;(TBA by Project)</h3>',
+					'<div class="probleContent">',
+					'<div style="display:inline-block;width:50%">Huang Cheng</div>',
+					'<div style="display:inline-block;width:50%;text-align:right;">0 min ago</div>',
+					'</div>',
+					'</div>',
+					'<div style="position:absolute;top:16px;left:8px">',
+					'<div class="problemList-img">',
+						'<tpl if="Status==\'0\'">',
+							'<img style="width:25px;height:25px;-webkit-border-radius:.2em" src="resources/images/status/sixth-status.png">',
+						'<tpl elseif="Status==\'1\'">',
+							'<img style="width:25px;height:25px;-webkit-border-radius:.2em" src="resources/images/status/fourth-status.png">',
+						'<tpl else>',
+							'<img style="width:25px;height:25px;-webkit-border-radius:.2em" src="resources/images/status/third-status.png">',
+						'</tpl>',
+					'</div>',
+					'</div>',
+					'</div>',
+					'</tpl>', {
+						compiled: true,
+						getBrHtml: function(str){
+							return str.replace(/\n/g,'<br />');
+						}
+					})
+			},{
 				xtype: 'label',
-				docked: 'bottom',
 				cls: 'subtitleLabel',
+				itemId : 'latestLabel',
 				html : 'Latest Reply'
-			}]
-		}, {
-			//最新回复
-			xtype: 'container',
-			scrollDock: 'top',
-			name: 'latestReply',
-			//			height:'75px',
-			//			minHeight:'75px',
-			//			maxHeight:'75px',
-			itemId: 'latestReply',
-			cls: 'lastestReplyCls',
-			style: 'background : white',
-			tpl: Ext.create('Ext.XTemplate',
-				'<tpl>',
-				'<div class="latestReply-Div defaultFont-style">',
-				//				'<p class="content">{Description}</p>',
-				'<p class="content">Checked Ok</p>',
-				'</div>',
-				'</tpl>', {
+			},{
+				//最新回复
+				xtype: 'container',
+				name: 'latestReply',
+				itemId: 'latestReply',
+				cls: 'lastestReplyCls',
+				style: 'background : white',
+				tpl: Ext.create(
+				'Ext.XTemplate',
+					'<tpl>',
+						'<div class="problemList-Div defaultFont-style">',
+							'<div class="problemList-row">',
+								'<p class="problemName" style="font-weight:normal;padding:10px 0px;">{[this.getBrText(values.Comments)]}</p>',
+								'<tpl if="PathArrayString !==\'\'">',
+									'<div class="probleContent" style="margin-top:-6px;">',
+										'<div class="imgCont">',
+											'<tpl for="ImagePath">',
+												'<input  type="image" class="imgArr" onclick="fileUploadCtr.viewPic(false,\'{parent.PathArrayString}\',{[xindex]},false)" src="{Url}" width="44px" height="44px" />',
+											'</tpl>',
+										'</div>',
+									'</div>',
+								'</tpl>',
+							'</div>',
+						'</div>',
+					'</tpl>', {
 					compiled: true,
-				}),
-			items: [{
+					getBrText: function(string){
+						return string.replace(/\n/gi,'<br />');
+					}
+				})
+			},{
 				xtype: 'label',
 				docked: 'bottom',
+				itemId: 'hisLabel',
 				cls: 'subtitleLabel',
 				html : 'History'
 			}]
-		},
-//		{
-//			xtype: 'button',
-//			scrollDock: 'bottom',
-//			id: 'loadMoreBtn',
-//			ui: 'plain',
-//			cls: 'loadMoreBtnCls',
-////			text: "加载更多",
-//			locales: {
-//			  text:'listPaging.loadMoreText'
-//		   	},
-//			handler: function() {
-////				this.up('problemList').fireEvent("loadMore", this);
-//			}
-//		}
-		]
+		}]
 	}
 });

@@ -4,7 +4,8 @@ Ext.define('iTenants.view.Main', {
     requires: [
         'Ext.TitleBar',
         'Ext.Button',
-        'iTenants.view.MarketList'
+        'iTenants.view.MarketList',
+        'Ext.ux.AccordionList'
     ],
     config: {
 		autoDestroy: false,
@@ -14,7 +15,7 @@ Ext.define('iTenants.view.Main', {
             {
             	xtype: 'titlebar',
 				docked: 'top',
-				title: 'Malls',
+				title: 'Properties',
 				cls: 'customToolBar',
 				items: [{
 					xtype: 'button',

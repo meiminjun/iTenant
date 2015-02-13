@@ -1,0 +1,398 @@
+{
+	"hdFormFirstCon" : {
+		"companyName": "Jones Day",
+		"attn": "Stephanie Ng",
+		"companyAddr": "21 Church Street",
+		"contactNumber": "61231234",
+		"unitNo": "# 01-02",
+		"title": "CAPITAGREEN"
+	},
+	"hdFormThirdCon": {
+		"title": "The Tenant confirms that the premises are in a satisfactory condition for handover by the Landlord. ",
+		"secondTitle": "2 The Landlord hereby hands over to the Tenant the above premises with the following sets of keys:-",
+		"thirdTitle": "3 Please acknowledge your acceptance and confirm that the premises are in a satisfactory condition by signing the acknowledgement below. You hereby also confirm that upon the expiry or termination of the lease, you will yield the premises up in the accordance with the lease’s provisions and will return the sets of keys and access cards to the Landlord.",
+		"cardNo" : 43,
+		"boxKey" : 2,
+		"designationName1" : "Victor Leung",
+		"signDate1" : "",
+		"designationName2" : "Stephanie Ng",
+		"signDate2" : ""
+	},
+	"inspected":[{
+		"tableName":"1 The Landlord and Tenant have jointly inspected the subject premises, and both parties agree to hand over / take over the above-mentioned unit(s) respectively in the condition specified below:",
+		"tableValueList":[
+			{
+				"column1":"S/N",
+				"column2":"Description",
+				"column3":"Detail"
+			},{
+				"group" : true,
+				"column1":"1.0",
+				"column2":"ARCHITECTURAL"
+			},{
+				"column1":"1.1",
+				"column2":"Flooring",
+				"column3":"Raised Floor with 23 nos of bare service outlet boxes by Eclipse<br>Size: 600 x 600mm<br>Quantity : 1 Lot"
+			},{
+				"column1":"1.2",
+				"column2":"Ceiling Panel",
+				"column3":"Mineral Fibre Ceiling Panel by AMF Thermatex Thermofon <br>Size : 600 x 600 x 15 mm <br>Quantity : 1 Lot"
+			},{
+				"column1":"1.3",
+				"column2":"Walls",
+				"column3":"Glass panel and dry wall<br>Quantity : 1 Lot"
+			},{
+				"group" : true,
+				"column1":"2.0",
+				"column2":"AIR CONDITIONING AND MECHANICAL VENTILATION"
+			},{
+				"column1":"2.1",
+				"column2":"Air Conditioning Diffusers",
+				"column3":"Swirl diffusers (SF 600) by Connols-Air (S) Pte Ltd<br>Quantity : 46 nos. "
+			},{
+				"group" : true,
+				"column1":"3.0",
+				"column2":"ELECTRICAL"
+			},{
+				"column1":"3.1",
+				"column2":"Power Supply",
+				"column3":"100A (TPN) Normal Power Distribution Board for 78 W/m² <br>Quantity : 2 numbers"
+			},{
+				"column1":"3.2",
+				"column2":"Light Fitting",
+				"column3":"2 x 14W T5 (16mm) Recessed Mounted Luminaire with high frequency electronic ballast, by Davis, Model CAUW414T5S<br>Quantity 9 numbers"
+			},{
+				"column1":"3.3",
+				"column2":"Emergency Lightings",
+				"column3":"Emergency Lightings<br>Quantity : 10 numbers"
+			},{
+				"column1":"3.4",
+				"column2":"Electrical Power Point",
+				"column3":"Electrical Power Points by brand: MK<br>Quantity : 3 numbers"
+			},{
+				"column1":"3.5",
+				"column2":"Lighting Switches",
+				"column3":"Single Switch by MK<br>Quantity : 2 numbers"
+			},{
+				"group" : true,
+				"column1":"4.0",
+				"column2":"FIRE PROTECTION SYSTEM"
+			},{
+				"column1":"4.1",
+				"column2":"Sprinkler System",
+				"column3":"Concealed Fire Sprinkler System<br>Quantity : 1 lot"
+			},{
+				"column1":"4.2",
+				"column2":"Fire Extinguisher",
+				"column3":"4.0 kg ABC Dry Powder<br>Quantity : 3 numbers"
+			},{
+				"column1":"4.3",
+				"column2":"Public Address Speaker",
+				"column3":"PA speakers, brand: TOA by TOA Electronics Pte. Ltd.<br>Quantity : 14 numbers"
+			},{
+				"column1":"4.4",
+				"column2":"Exit Lights",
+				"column3":"Exit Lights<br>Quantity : 1 number"
+			},{
+				"column1":"4.5",
+				"column2":"Fire Call Point ",
+				"column3":"Fire Alarm Call Point<br>Quantity : 2 numbers"
+			},{
+				"column1":"4.6",
+				"column2":"Fire Hose Reel",
+				"column3":"Fire Hose Reel with cabinet<br>Quantity : 1 number"
+			},{
+				"column1":"4.7",
+				"column2":"Fire Bell",
+				"column3":"Fire Bell<br>Quantity : 2 numbers"
+			},{
+				"group" : true,
+				"column1":"5.0",
+				"column2":"PLUMBING AND SANITARY"
+			},{
+				"column1":"5.1",
+				"column2":"Floor Drain",
+				"column3":"Floor Drain <br>Quantity : 1 lot"
+			},{
+				"column1":"5.2",
+				"column2":"Water Supply Point",
+				"column3":"Water Supply Pipe<br>Quantity : 1 lot"
+			},{
+				"group" : true,
+				"column1":"6.0",
+				"column2":"PLUMBING AND SANITARY"
+			},{
+				"column1":"6.1",
+				"column2":"Telephone Line",
+				"column3":"Telephone lines per unit<br>Quantity : 100 pairs"
+			},{
+				"column1":"6.2",
+				"column2":"Mobile Phone Antenna",
+				"column3":"Mobile phone antennas<br>Quantity : 2 numbers"
+			}]
+		}],
+	"appendix":[{
+		"tableName":"Appendix 1: Floor Plans",
+		"appendix":[
+			{
+				"imgUrl":"resources/images/test/p/1.jpg",
+				"type": "1",
+				"leaf": true
+			}]
+		},{
+		"tableName":"Appendix 2: Existing Condition Photos",
+		"appendix":[
+			{
+				"column1":"S/N",
+				"column2":"Description",
+				"column3":"Attachment",
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"group" : true,
+				"columnID" : "1.0",
+				"columnTitle" : "ARCHITECTURAL",
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"1.1",
+				"name":"Flooring",
+				"imgUrls":[
+					"resources/images/test/s/1.1.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"1.2",
+				"name":"Ceiling Panel",
+				"imgUrls":[
+					"resources/images/test/s/1.2.jpg"
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"1.3",
+				"name":"Walls",
+				"imgUrls":[
+					"resources/images/test/s/1.3.jpg"
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"group" : true,
+				"columnID" : "2.0",
+				"columnTitle" : "AIR CONDITIONING AND MECHANICAL VENTILATION",
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"2.1",
+				"name":"Air Conditioning Fitting",
+				"imgUrls":[
+					"resources/images/test/s/2.1.jpg"
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"group" : true,
+				"columnID" : "3.0",
+				"columnTitle" : "ELECTRICAL",
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"3.1",
+				"name":"Power Supply",
+				"imgUrls":[
+					"resources/images/test/s/3.1.jpg"
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"3.2",
+				"name":"Light Fitting",
+				"imgUrls":[
+					"resources/images/test/s/3.2.1.jpg",
+					"resources/images/test/s/3.2.2.jpg"
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"3.3",
+				"name":"Emergency Lightings",
+				"imgUrls":[
+					"resources/images/test/s/3.3.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"3.4",
+				"name":"Electrical Power Point",
+				"imgUrls":[
+					"resources/images/test/s/3.4.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"3.5",
+				"name":"Lighting Switches",
+				"imgUrls":[
+					"resources/images/test/s/3.5.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"group" : true,
+				"columnID" : "4.0",
+				"columnTitle" : "FIRE PROTECTION SYSTEM",
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"4.1",
+				"name":"Sprinkler System",
+				"imgUrls":[
+					"resources/images/test/s/4.1.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"4.2",
+				"name":"Fire Extinguisher",
+				"imgUrls":[
+					"resources/images/test/s/4.2.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"4.3",
+				"name":"Public Address Speaker",
+				"imgUrls":[
+					"resources/images/test/s/4.3.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"4.4",
+				"name":"Exit Lights",
+				"imgUrls":[
+					"resources/images/test/s/4.4.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"4.5",
+				"name":"Fire Call Point",
+				"imgUrls":[
+					"resources/images/test/s/4.5.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"4.6",
+				"name":"Fire Hose Reel",
+				"imgUrls":[
+					"resources/images/test/s/4.6.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"4.7",
+				"name":"Fire Bell",
+				"imgUrls":[
+					"resources/images/test/s/4.7.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"group" : true,
+				"columnID" : "5.0",
+				"columnTitle" : "PLUMBING AND SANITARY",
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"5.1",
+				"name":"Floor Drain",
+				"imgUrls":[
+					"resources/images/test/s/5.1.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"5.2",
+				"name":"Water Supply Point",
+				"imgUrls":[
+					"resources/images/test/s/5.2.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"group" : true,
+				"columnID" : "6.0",
+				"columnTitle" : "EXTRA LOW VOLTAGE (ELV) SERVICES",
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"6.1",
+				"name":"Telephone Line",
+				"imgUrls":[
+					"resources/images/test/s/6.1.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			},
+			{
+				"num":"6.2",
+				"name":"Mobile Phone Antenna",
+				"imgUrls":[
+					"resources/images/test/s/6.2.jpg",
+				],				
+				"type": "2",
+				"leaf": true
+			}]
+		},
+		{
+			"tableName":"Appendix 3: Defect List",
+			"appendix":[
+			{
+				"column1":"S/N",
+				"column2":"Description",
+				"column3":"Remark",
+				"type": "3",
+				"leaf": true
+			},
+			{
+				"num": "1.1",
+				"name": "Flooring",
+				"history": "\n 1. Cracks found on flooring Area \n 2.  Scratches found on flooring Area",
+				"imgUrls": [
+					"resources/images/test/s/p_defect_01.jpg",
+				],
+				"type": "3",
+				"leaf": true
+			}
+			]	
+		}]
+}

@@ -10,6 +10,16 @@ Ext.define('iTenants.store.CheckList', {
 	    model: 'iTenants.model.CheckList',
 	    storeId: "checkList",
 		autoLoad : false,
+		grouper: {
+		    groupFn: function(record) {
+				return record.get('groupName');
+		    },
+		    sortProperty : 'groupID'
+		},	
+		sorters :[{
+	    	property : "CheckPointID",
+	    	direction: "ASC"
+	    }],
 		proxy : {
 			type : 'ajax',
 			url : 'resources/data/GetCheckPointList.json',

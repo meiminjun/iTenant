@@ -5,16 +5,9 @@
  * @date 2014-12-30
  */
 Ext.define('iTenants.model.PostilImgList', {
-
-	requires: [
-		'Ext.ux.ImageGridList.model.Image'
-	],
-
-    extend: 'Ext.ux.ImageGridList.model.Image',
-    
+	extend: 'Ext.data.Model',
     config: {
        fields: [
-
        		// image url
             {name: 'url', type: 'string'},
             // image title

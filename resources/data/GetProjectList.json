@@ -15,15 +15,13 @@
 			"NotPassPercent": 5,
 			"ExpiredPercent": 85,
 			"UncheckedPercent": 5,
+			"Comments": "1. Cracks found on flooring Area 2.  Scratches found on flooring Area.",
 			"Thumbnail": [
 				{
-					"Url": "resources/images/44.png"
-				},
-				{
-					"Url": "resources/images/22.png"
+					"Url": "resources/images/test/kk.png"
 				}
 			],
-			"PathArrayString": "resources/images/44.png|resources/images/22.png",
+			"PathArrayString": "resources/images/test/kk.png",
 			"num":4,
 		}, {
 			"ProjectStatus": "Implementation",

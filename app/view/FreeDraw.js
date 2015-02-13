@@ -53,7 +53,7 @@
 	    		        		text : 'signatureView.saveText'
 	    		        	},
 	    		        	handler : function(){
-	    		        		handingOverCtr.goToPDFFn();
+	    		        		handingOverCtr.saveSignature();
 	    		        	}
 	    		        }
 	    		    ]

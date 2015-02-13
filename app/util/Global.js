@@ -339,12 +339,12 @@ var Global = {
 			"en-us" : "No,Yes"			
 		},
 		"handingOver" : {
-			"zh-cn" : "Handing Over",
-			"en-us" : "Handing Over"		
+			"zh-cn" : "Handover",
+			"en-us" : "Handover"		
 		},
 		"takingOver" : {
-			"zh-cn" : "Taking Over",
-			"en-us" : "Taking Over"		
+			"zh-cn" : "Takeover",
+			"en-us" : "Takeover"		
 		},
 		"checkListNotAll":{
 			"zh-cn" : "Before you modify  the order,please make sure checklist is ok.",

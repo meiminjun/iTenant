@@ -50,10 +50,8 @@
     },
     "workOrderDetailsChild" : {
     	"unitText" : "Unit Information",
-    	"unitNameLabel" : "Name",
-    	"businessTypeLabel" : "Business Type",
-    	"oContactPersonLabel" : "OPS Contact Person",
-    	"fContactPersonLabel" : "Finance Contact Person",
+    	"unitNameLabel" : "Company Name",
+    	"businessTypeLabel" : "Nature of Business",
     	"floorPlanLabel" : "Floor Plan",
     	"tenantText" : "Tenant Information",
     	"tenantNameLabel" : "Name",
@@ -61,11 +59,11 @@
     	"mobileNumberLabel" : "Mobile Number",
     	"emailLabel" : "Email",
     	"addressLabel" : "Address",
-    	"preInspection"  : "Pre-inspection pictures",
+    	"preInspection"  : "Existing Condition Photos",
     	"possessionDateLabel" : "Date of possession",
     	"periodLabel" : "Lease Period",
     	"areaLabel" : "Lease Area",
-    	"contactsLabel" : "Contacts"
+    	"contactsLabel" : "Landlord Contact"
     },
     "modifyView" : {
     	"title" : "Modify",

@@ -125,6 +125,7 @@
         "resources/icons",
         "resources/startup",
         "resources/data",
+        "resources/data/pdf",
         "locales",
         "app/util/phoneGap/plugins"
     ],

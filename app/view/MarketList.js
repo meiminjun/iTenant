@@ -31,13 +31,18 @@ Ext.define('iTenants.view.MarketList', {
 			'</div>',
 			'<div class="avatar-row defaultFont-style" style="margin-left:67px;">',
 				'<div class="head text-overflow"><span class="proName">{MarketShortName}</span></div>',
-				'<div class="rowscontent">{Address}</div>',
+				'<div class="rowscontent">{[this.getBrHtml(values.Address)]}</div>',
 				'<span class="num">{TasksCount}</span>',
 			'</div>', 
 			'<div>',
 				'<div class="arrow-black"></div>',
-				'<div class="detailImg"></div>',
-			'</div>'
+//				'<div class="detailImg"></div>',  移除详情
+			'</div>',
+			{
+	        	getBrHtml: function(str){
+	        		return str.replace(/\n/g,'<br />');
+	        	}
+			}
 		]
 //		plugins: [{
 //		    type: 'listpaging',

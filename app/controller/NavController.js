@@ -9,7 +9,9 @@ Ext.define('iTenants.controller.NavController', {
     extend: 'Ext.app.Controller',
 
     config: {
-        refs: {},
+        refs: {
+        	main : 'main'
+        },
         control: {}
     },
     /**
@@ -128,7 +130,7 @@ Ext.define('iTenants.controller.NavController', {
 	 * android back鍵/返回按鈕/dragend返回統一調用此方法進行判斷返回刷新操作
 	 * Ext.Function.defer 250ms進行數據請求，不需要清空頁面（和push調用的loaddata方法一致）
 	 */
-	popToPrev : function(value,isNeedRefresh) {
+	popToPrev : function(value) {
 		try{
 			var me = this,
 				count = 1,	
@@ -139,7 +141,7 @@ Ext.define('iTenants.controller.NavController', {
 					me.nowPicker.hide();
 				};
 				me.nowPicker = null;
-				return;
+				return true;
 			}else{
 				me.nowPicker = null;
 			}
@@ -189,14 +191,12 @@ Ext.define('iTenants.controller.NavController', {
 	            // 异步清空
 	            Ext.Function.defer(function(){me.clearCurrentPage(component,key);},500);
 			}
-			if(isNeedRefresh){
+			var view = me[me.nowActiveViewKey[me.nowActiveViewKey.length - 1]];
+			view = view || me.getMain();
+			if(view.needRefresh && view.refreshPageFn){
+				view.needRefresh = false;
 				Ext.Function.defer(function(){
-					if(me.nowActiveViewKey.length > 1){
-						var view = me[me.nowActiveViewKey[me.nowActiveViewKey.length - 1]];
-						if(view.refreshPageFn){
-							view.refreshPageFn();
-						}					
-					}
+					view.refreshPageFn();
 				},500);				
 			}
 			return true;

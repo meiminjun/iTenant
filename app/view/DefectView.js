@@ -1,5 +1,5 @@
 /**
- * @desc	工单检查填写表单
+ * @desc	内检检查表单
  * @author	meiminjun
  * @date	2014/12/29
  */
@@ -46,6 +46,9 @@ Ext.define('iTenants.view.DefectView', {
 			style: 'background-color: white;',
 			padding : 10,
 			items : [{
+				xtype: 'container',
+				name: 'label'
+			},{
 				xtype : 'textareafield',
 				itemId : 'DefectComments',
 				cls : 'textAreaInputCls',

@@ -15,19 +15,21 @@ Ext.define('iTenants.view.CheckListPicker', {
 				xtype: 'label',
 				cls: 'label',
 				html: ''
-			}, {
+			},
+			{
 				xtype: 'button',
 				cls: 'btn',
 				text: 'Ok',
 				handler : function(){
-//					inspectCtr.checkOKReplyFn();
+					handingOverCtr.checkListPickerOkFn();
 				}
 			}, {
 				xtype: 'button',
+				name: 'defectBtn',
 				cls: 'btn defectBtn',
 				text: 'Defect found',
 				handler: function() {
-					handingOverCtr.jumpToDefect();
+					handingOverCtr.checkListPickerDefectFn();
 				}
 			}, {
 				xtype: 'button',
@@ -36,6 +38,6 @@ Ext.define('iTenants.view.CheckListPicker', {
 				handler: function() {
 					handingOverCtr.hideCheckListPicker();
 				}
-		    }]
+			}]
 	}
 });

@@ -1,0 +1,328 @@
+{
+	"inspected":[{
+		"tableName":"1 The Landlord and Tenant have jointly inspected the subject premises, and both parties agree to hand over / take over the above-mentioned unit(s) respectively in the condition specified below:",
+		"tableValueList":[
+			{
+				"column1":"S/N",
+				"column2":"Description",
+				"column3":"Detail"
+			},{
+				"column1":"1",
+				"column2":"Flooring",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)"
+			},{
+				"column1":"2",
+				"column2":"Ceiling Panel",
+				"column3":"Mineral Fibre Ceiling Panel (600 x 600 x 15mm VTS-15) by AMF Thermatex Thermofon"
+			},{
+				"column1":"3",
+				"column2":"Walls",
+				"column3":"Glass panel, dry wall"
+			},{
+				"column1":"4",
+				"column2":"Air Conditioning Fitting",
+				"column3":"46 nos. of swirl diffusers (SF 600) by Connols-Air (S) Pte Ltd"
+			},{
+				"column1":"5",
+				"column2":"Power Supply",
+				"column3":"2 nos. of 100A (TPN) Normal Power Distribution Board for 78 W/m² and 2 nos. of 40A (TPN) Emergency Power Distribution Board for "
+			},{
+				"column1":"6",
+				"column2":"Light Fitting",
+				"column3":"9 nos. of 2 x 14W and 50 nos. of 4 x 14 W T5 (16mm) Recessed Mounted Luminaire with high frequency electronic ballast, by Davis, "
+			},{
+				"column1":"7",
+				"column2":"Sprinkler System",
+				"column3":"1 lot"
+			},{
+				"column1":"8",
+				"column2":"Fire Extinguisher",
+				"column3":"3 nos. of 4.0 kg ABC Dry Powder"
+			},{
+				"column1":"9",
+				"column2":"Public Address Speaker",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)"
+			},{
+				"column1":"10",
+				"column2":"Telephone Line",
+				"column3":"100 pairs of telephone lines per unit"
+			},{
+				"column1":"11",
+				"column2":"Mobile Phone Antenna",
+				"column3":"2 nos. of mobile phone antennas"
+			},{
+				"column1":"12",
+				"column2":"Emergency Lights",
+				"column3":"10 nos. of emergency lights"
+			},{
+				"column1":"13",
+				"column2":"Exit Lights",
+				"column3":"1 no. of exit lights"
+			},{
+				"column1":"14",
+				"column2":"Alarm Call Point",
+				"column3":"2 nos. of alarm call point"
+			},{
+				"column1":"15",
+				"column2":"Alarm Bell",
+				"column3":"2 nos. of alarm bell"
+			},{
+				"column1":"16",
+				"column2":"Fire Hose reel",
+				"column3":"1 no. of fire hose reel (c/w cabinet)"
+			},{
+				"column1":"17",
+				"column2":"Lights Photocell",
+				"column3":"5 nos. of lights photocell "
+			},{
+				"column1":"18",
+				"column2":"Power Point",
+				"column3":"3 nos. of power points, brand: MK"
+			},{
+				"column1":"19",
+				"column2":"Lighting Switches",
+				"column3":"Single = 2 nos.; Double = 3 nos.; Triple = 1 no. of light switches, brand: MK"
+			}]
+		}],
+	"appendix":[{
+		"tableName":"Defects",
+		"tableValueList":[
+			{
+				"column1":"S/N",
+				"column2":"Description",
+				"column3":"Detail",
+				"column4":"History"
+			},
+			{
+				"column1":"1",
+				"column2":"Flooring",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "Cracks found on flooring.",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "resources/images/test/form1.png",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			}]
+		},{
+		"tableName":"Existing Conditions",
+		"tableValueList":[
+			{
+				"column1":"S/N",
+				"column2":"Description",
+				"column3":"Detail",
+				"column4":"Attachment"
+			},
+			{
+				"column1":"1",
+				"column2":"Flooring",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"2",
+				"column2":"Ceiling Panel",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"3",
+				"column2":"Walls",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"4",
+				"column2":"Air Conditioning Fitting",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"5",
+				"column2":"Power Supply",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"6",
+				"column2":"Light Fitting",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"7",
+				"column2":"Sprinkler System",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"8",
+				"column2":"Fire Extinguisher",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"9",
+				"column2":"Public Address Speaker",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"10",
+				"column2":"Telephone Line",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"12",
+				"column2":"Mobile Phone Antenna",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"14",
+				"column2":"Emergency Lights",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"15",
+				"column2":"Exit Lights",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"16",
+				"column2":"Alarm Call Point",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"17",
+				"column2":"Alarm Bell",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"18",
+				"column2":"Fire Hose reel",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"19",
+				"column2":"Lights Photocell",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"20",
+				"column2":"Power Point",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			},{
+				"column1":"21",
+				"column2":"Lighting Switches",
+				"column3":"Raised Floor (600 x 600mm) by Eclipse, with (23 nos. of bare service outlet boxes)",
+				"column4":{
+					"userAccount" : "Joseph",
+					"comment" : "",
+					"releaseDate" : "2015-01-18",
+					"postilUrl" : "",
+					"photoUrl" : ["resources/images/test/form2.png","resources/images/test/form2.png","resources/images/test/form2.png"]
+				}
+			}]
+		}]
+}

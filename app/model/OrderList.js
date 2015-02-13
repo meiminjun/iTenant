@@ -35,6 +35,9 @@ Ext.define('iTenants.model.OrderList', {
             },
             {
             	name: 'OrderType'
+            },
+            {
+            	name: 'LightStatus'
             }
         ]
     }

@@ -7,7 +7,7 @@
 Ext.define('iTenants.view.HandingOver', {
     extend: 'Ext.Container',
     xtype : 'handingOver',
-
+    requires: ['Ext.Menu'],
     config: {
     	autoDestroy: false,
         itemId: 'handingOver',
@@ -36,21 +36,11 @@ Ext.define('iTenants.view.HandingOver', {
                     },
                     {
                     	xtype: 'button',
-                    	name : 'emailBtn',
+                    	name : 'plusBtn',
                     	align: 'right',
                     	ui: 'plain',
                     	cls: 'btn',
-                    	icon : 'resources/images/email.png',
-                    	iconCls: 'iconBtn'
-
-                    },
-                    {
-                    	xtype: 'button',
-                    	name: 'examine',
-                    	align: 'right',
-                    	ui: 'plain',
-                    	cls: 'btn',
-                    	icon : 'resources/images/pizhu.png',
+                    	icon : 'resources/images/plus.png',
                     	iconCls: 'iconBtn'
 
                     }

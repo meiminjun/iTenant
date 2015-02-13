@@ -121,7 +121,7 @@ Ext.define('iTenants.util.PubOperation', {
 			}
 			Ext.toast({
 	    		message : '<div class="'+maskCls+'"></div><div>'+msg+'</div>',
-	    		timeout:1000,
+	    		timeout:2000,
 	    		centered : true,
 	    		modal : false,
 	    		cls : 'maskTipsCls',

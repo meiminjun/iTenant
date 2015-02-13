@@ -48,60 +48,18 @@ Ext.define('iTenants.view.WorkOrderDetailsChild', {
            		itemId : 'businessTypeCon',
            		style : 'border-bottom: 1px solid #DCDCDC;',
            		items : [{
-                    flex: 2,
+                    flex: 3,
                     cls : 'repairOrderItemsConLeft',
                     itemId : 'businessTypeLabel',
                     locales : {
                     	html : 'workOrderDetailsChild.businessTypeLabel'
                     }
            		},{
-                    flex: 3,
+                    flex: 2,
                     cls : 'repairOrderItemsConRight',
                     itemId : 'businessTypeVal',
                     tpl : [
                        '{businessType}'
-                    ]
-           		}]
-			},{
-				// OPS Contact Person
-				xtype : 'container',
-           		layout: 'hbox',
-           		itemId : 'oContactPersonCon',
-           		style : 'border-bottom: 1px solid #DCDCDC;',
-           		items : [{
-                    flex: 3,
-                    cls : 'repairOrderItemsConLeft',
-                    itemId : 'oContactPersonLabel',
-                    locales : {
-                    	html : 'workOrderDetailsChild.oContactPersonLabel'
-                    }
-           		},{
-                    flex: 2,
-                    cls : 'repairOrderItemsConRight',
-                    itemId : 'oContactPersonVal',
-                    tpl : [
-                       '{oContactPerson}'
-                    ]
-           		}]
-			},{
-				// Finance Contact Person
-				xtype : 'container',
-           		layout: 'hbox',
-           		itemId : 'fContactPersonCon',
-           		style : 'border-bottom: 1px solid #DCDCDC;',
-           		items : [{
-                    flex: 3,
-                    cls : 'repairOrderItemsConLeft',
-                    itemId : 'fContactPersonLabel',
-                    locales : {
-                    	html : 'workOrderDetailsChild.fContactPersonLabel'
-                    }
-           		},{
-                    flex: 2,
-                    cls : 'repairOrderItemsConRight',
-                    itemId : 'fContactPersonVal',
-                    tpl : [
-                       '{fContactPerson}'
                     ]
            		}]
 			},{
@@ -167,8 +125,8 @@ Ext.define('iTenants.view.WorkOrderDetailsChild', {
            		    	'<div class="name">{name}</div>',
            		    	'<div class="contacts">',
            		    		'<div class="mobile">{mobile}</div>',
-           		    		'<div class="email">{email}</div>',
            		    	'</div>',
+           		    	'<div class="name" style="margin-top:-.5em">{email}</div>',
            		    '</div>'
            		]
 			},{
@@ -244,33 +202,35 @@ Ext.define('iTenants.view.WorkOrderDetailsChild', {
 			},{
 				// 营销经理的联系方式（姓名，联系电话，电子邮件）
 				xtype : 'container',
-				itemId : 'marketingManager',
+				itemId : 'marketing',
 				style : 'border-bottom: 1px solid #DCDCDC;background:white',
 				tpl : [
 			        '<div class="informationHeadImg"></div>',
 				    '<div class="tenantInformation">',
-				    	'<div class="post">{post}</div>',
+				    	'<div class="post">{section}</div>',
 				    	'<div class="name">{name}</div>',
+				    	'<div class="name">{post}</div>',
 				    	'<div class="contacts">',
-				    		'<div class="mobile">{mobile}</div>',
-				    		'<div class="email">{email}</div>',
-				    	'</div>',
+	       		    		'<div class="mobile">{mobile}</div>',
+	       		    	'</div>',
+	       		    	'<div class="name" style="margin-top:-.5em">{email}</div>',
 				    '</div>'
 				]
 			},{
 				// 资产经理的联系方式（姓名，联系电话，电子邮件）
 				xtype : 'container',
-				itemId : 'assetManager',
+				itemId : 'assetManagement',
 				style : 'border-bottom: 1px solid #DCDCDC;background:white',
 				tpl : [
 			        '<div class="informationHeadImg"></div>',
 				    '<div class="tenantInformation">',
-				    	'<div class="post">{post}</div>',
+					    '<div class="post">{section}</div>',
 				    	'<div class="name">{name}</div>',
+				    	'<div class="name">{post}</div>',
 				    	'<div class="contacts">',
-				    		'<div class="mobile">{mobile}</div>',
-				    		'<div class="email">{email}</div>',
-				    	'</div>',
+	       		    		'<div class="mobile">{mobile}</div>',
+	       		    	'</div>',
+	       		    	'<div class="name" style="margin-top:-.5em">{email}</div>',
 				    '</div>'
 				]
 			},{
@@ -281,12 +241,30 @@ Ext.define('iTenants.view.WorkOrderDetailsChild', {
 				tpl : [
 			        '<div class="informationHeadImg"></div>',
 				    '<div class="tenantInformation">',
-				    	'<div class="post">{post}</div>',
+					    '<div class="post">{section}</div>',
 				    	'<div class="name">{name}</div>',
+				    	'<div class="name">{post}</div>',
 				    	'<div class="contacts">',
-				    		'<div class="mobile">{mobile}</div>',
-				    		'<div class="email">{email}</div>',
-				    	'</div>',
+	       		    		'<div class="mobile">{mobile}</div>',
+	       		    	'</div>',
+	       		    	'<div class="name" style="margin-top:-.5em">{email}</div>',
+				    '</div>'
+				]
+			},{
+				// 契约管理员（姓名，联系电话，电子邮件）
+				xtype : 'container',
+				itemId : 'leaseAdministration',
+				style : 'border-bottom: 1px solid #DCDCDC;background:white',
+				tpl : [
+			        '<div class="informationHeadImg"></div>',
+				    '<div class="tenantInformation">',
+					    '<div class="post">{section}</div>',
+				    	'<div class="name">{name}</div>',
+				    	'<div class="name">{post}</div>',
+				    	'<div class="contacts">',
+	       		    		'<div class="mobile">{mobile}</div>',
+	       		    	'</div>',
+       		    		'<div class="name" style="margin-top:-.5em">{email}</div>',
 				    '</div>'
 				]
 			}

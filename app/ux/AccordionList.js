@@ -14,7 +14,7 @@
  *               "text" : "Today",
  *               "items" : [{
  *                           "text" : "Eat",
- *                           "leaf" : true
+ *                           "leaf" : true 			//true 表示此为最终子元素
  *                       }, {
  *                           "text" : "Sleep",
  *                           "leaf" : true

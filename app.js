@@ -75,7 +75,8 @@ function initFn(){
           'OrderListStore',
           'InspectionDetailStore',
           'OfflineLocalStore',
-          'PreInspectionListStore'
+          'PreInspectionListStore',
+          'PostilImgList'
         ],
 
 	    models: [
@@ -84,7 +85,9 @@ function initFn(){
 			'OrderList',
 			'CheckList',
 			'InspectionDetail',
-			'PreInspectionList'
+			'PreInspectionList',
+			'PostilImgList',
+			'Appendix'
 	    ],
 	    views: [
 			'Main',
@@ -93,6 +96,7 @@ function initFn(){
 			'HandingOver',
 			'CheckList',
 			'CheckListPicker',
+			'CheckListMenu',
 			'InspectionDetail',
 			'DefectView',
 			'ModifyView',
@@ -110,7 +114,6 @@ function initFn(){
 			'HandoverFormContent',
 			'HFInspected',
 			'HFAppendix'
-
 	    ],
 	    controllers: [
 	        'Main',

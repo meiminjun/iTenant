@@ -5,21 +5,18 @@
  * @date 2014-12-30
  */
 Ext.define('iTenants.view.PostilImgList', {
-    extend: 'Ext.Panel',
+    extend: 'Ext.Container',
     xtype: 'postilImgList',
     requires: [
-        'Ext.ux.ImageGridList.view.Panel',
-        'iTenants.store.PostilImgList'
+        'Ext.ux.AccordionList',
+        'Ext.data.TreeStore'
     ],
     config: {
     	autoDestroy: false,
         itemId: 'postilImgList',
         layout : 'fit',
         cls : 'bgCls',
-        scrollable: {
-            directionLock: true,
-            direction: 'vertical'
-        },
+        scrollable: false,
         items: [{
             	xtype: 'titlebar',
  			    docked: 'top',
@@ -44,7 +41,7 @@ Ext.define('iTenants.view.PostilImgList', {
         ]
     },
     destroyChildFn: function(){
-    	var child = navCtr['PostilImgList'].getComponent('image-grid-list-panel');
+    	var child = navCtr['PostilImgList'].getComponent('imageGridList');
     	if(child){
     		child.destroy();
     	}

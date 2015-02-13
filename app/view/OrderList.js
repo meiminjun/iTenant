@@ -101,21 +101,17 @@ Ext.define('iTenants.view.OrderList', {
 		}],
 		itemTpl: [
 		    
-		    '<div class="orderListItem">',
-		    	'<div class="first">',
-		    		'<tpl if="Status==0">',
-		    			'<div class="grayState"></div>',
-		    		'<tpl else>',
-		    			'<div class="greenState"></div>',
-		    		'</tpl>',
-		    	'</div>',
-		    	'<div class="second">{OrderName}</div>',
-		    	'<div class="third">',
-		    		'<div class="number">{ShopNum}</div>',
-		    		'<div class="date">{[iTenants.util.PubOperation.dataFormatLogogram(values.CreateTime,"")]}</div>',
-		    	'</div>',
-		    	'<div class="fourth"></div>',
-		    '</div>'
+				'<div class="orderListItem lightStatus{LightStatus}">',
+			    	'<div class="first">',
+			    		'<div class="light"></div>',
+			    	'</div>',
+			    	'<div class="second">{OrderName}</div>',
+			    	'<div class="third">',
+			    		'<div class="number">{ShopNum}</div>',
+			    		'<div class="date">{[iTenants.util.PubOperation.dateFormatFun(values.CreateTime,"")]}</div>',
+			    	'</div>',
+			    	'<div class="fourth"></div>',
+			    '</div>'
 		],
 		plugins: [{
 		    xclass: 'Ext.plugin.ListPaging',

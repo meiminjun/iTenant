@@ -82,6 +82,7 @@ Ext.define('iTenants.controller.Main', {
 		var me = this,
 			className = e.target.className;
 		
+		//TODO:已经移除详情
 		if(className == 'detailImg'){
 			navCtr.pushToNext('iTenants.view.ProjectDetail', function(view) {
 				iTenants.util.PubOperation.showLoadMask();

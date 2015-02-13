@@ -90,8 +90,8 @@ Ext.define('iTenants.controller.OrderIndex', {
         		if(!response){
         			return;
         		}
-        		typeSegBtns.getItems().items[0].setBadgeText(response.HandingOverCount ? response.HandingOverCount.toString() : '0');
-        		typeSegBtns.getItems().items[1].setBadgeText(response.TakingOverCount ? response.TakingOverCount.toString() : '0');
+        		typeSegBtns.getItems().items[0].setBadgeText(response.HandingOverCount);
+        		typeSegBtns.getItems().items[1].setBadgeText(response.TakingOverCount);
         		orderList.getScrollable().getScroller().getTranslatable().translate(0,0);
         	}, orderList, false);
     	}else{

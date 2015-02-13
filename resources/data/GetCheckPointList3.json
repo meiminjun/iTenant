@@ -1,0 +1,237 @@
+{
+    "rows": [
+        {
+        	"groupID" : 1.0,
+        	"groupName" : "1.0 ARCHITECTURAL",
+            "CheckPoint": "Raised Floor with 23 nos of bare service outlet boxes by Eclipse \n Size: 600 x 600mm \n Quantity : 1 Lot",
+            "CheckPointDes": "1.1 Flooring",
+            "CheckItemID": "1",
+            "CheckPointID": "1",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+       		"groupID" : 1.0,
+        	"groupName" : "1.0 ARCHITECTURAL",
+            "CheckPoint": "Mineral Fibre Ceiling Panel by AMF Thermatex Thermofon \n Size : 600 x 600 x 15 mm \n Quantity : 1 Lot",
+            "CheckPointDes": "1.2 Ceiling Panel",
+            "CheckItemID": "1",
+            "CheckPointID": "2",
+            "Status": "2",
+            "Creator": "",
+            "CreateTime": ""
+        },
+        {
+        	"groupID" : 1.0,
+        	"groupName" : "1.0 ARCHITECTURAL",
+            "CheckPoint": "Glass panel and dry wall \n Quantity : 1 Lot",
+            "CheckPointDes": "1.3 Walls",
+            "CheckItemID": "1",
+            "CheckPointID": "3",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+        	"groupID" : 2.0,
+        	"groupName" : "2.0 AIR CONDITIONING AND MECHANICAL VENTILATION",
+            "CheckPoint": "Swirl diffusers (SF 600) by Connols-Air (S) Pte Ltd \n Quantity : 46 nos. ",
+            "CheckPointDes": "2.1 Air Conditioning Diffusers",
+            "CheckItemID": "1",
+            "CheckPointID": "4",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+        	"groupID" : 3.0,
+        	"groupName" : "3.0 ELECTRICAL",
+            "CheckPoint": "100A (TPN) Normal Power Distribution Board for 78 W/m² \n Quantity : 2 numbers ",
+            "CheckPointDes": "3.1 Power Supply",
+            "CheckItemID": "1",
+            "CheckPointID": "5",
+            "Status": "2",
+            "Creator": "",
+            "CreateTime": ""
+        },
+        {
+      	  	"groupID" : 3.0,
+        	"groupName" : "3.0 ELECTRICAL",
+            "CheckPoint": "2 x 14W T5 (16mm) Recessed Mounted Luminaire with high frequency electronic ballast, by Davis, Model CAUW414T5S \n Quantity 9 numbers",
+            "CheckPointDes": "3.2 Light Fitting",
+            "CheckItemID": "1",
+            "CheckPointID": "6",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+        	"groupID" : 3.0,
+        	"groupName" : "3.0 ELECTRICAL",
+            "CheckPoint": "Emergency Lightings \n Quantity : 10 numbers",
+            "CheckPointDes": "3.3 Emergency Lightings",
+            "CheckItemID": "1",
+            "CheckPointID": "7",
+            "Status": "2",
+            "Creator": "",
+            "CreateTime": ""
+        },
+        {
+        	"groupID" : 3.0,
+        	"groupName" : "3.0 ELECTRICAL",
+            "CheckPoint": "Electrical Power Points by brand: MK \n Quantity : 3 numbers",
+            "CheckPointDes": "3.4 Electrical Power Point",
+            "CheckItemID": "1",
+            "CheckPointID": "8",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+        	"groupID" : 3.0,
+        	"groupName" : "3.0 ELECTRICAL",
+            "CheckPoint": "Single Switch by MK \n Quantity : 2 numbers ",
+            "CheckPointDes": "3.5 Lighting Switches",
+            "CheckItemID": "1",
+            "CheckPointID": "9",
+            "Status": "2",
+            "Creator": "",
+            "CreateTime": ""
+        },
+        {
+       		"groupID" : 4.0,
+        	"groupName" : "4.0 FIRE PROTECTION SYSTEM",
+            "CheckPoint": "Concealed Fire Sprinkler System \n Quantity : 1 lot",
+            "CheckPointDes": "4.1 Sprinkler System",
+            "CheckItemID": "1",
+            "CheckPointID": "10",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+            "groupID" : 4.0,
+        	"groupName" : "4.0 FIRE PROTECTION SYSTEM",
+            "CheckPoint": "4.0 kg ABC Dry Powder \n Quantity : 3 numbers",
+            "CheckPointDes": "4.2 Fire Extinguisher",
+            "CheckItemID": "1",
+            "CheckPointID": "11",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+            "groupID" : 4.0,
+        	"groupName" : "4.0 FIRE PROTECTION SYSTEM",
+            "CheckPoint": "PA speakers, brand: TOA by TOA Electronics Pte. Ltd. \n Quantity : 14 numbers",
+            "CheckPointDes": "4.3 Public Address Speaker",
+            "CheckItemID": "1",
+            "CheckPointID": "12",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+            "groupID" : 4.0,
+        	"groupName" : "4.0 FIRE PROTECTION SYSTEM",
+            "CheckPoint": "Exit Lights \n Quantity : 1 number",
+            "CheckPointDes": "4.4 Exit Lights",
+            "CheckItemID": "1",
+            "CheckPointID": "13",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+            "groupID" : 4.0,
+        	"groupName" : "4.0 FIRE PROTECTION SYSTEM",
+            "CheckPoint": "Fire Alarm Call Point \n Quantity : 2 numbers",
+            "CheckPointDes": "4.5 Fire Call Point",
+            "CheckItemID": "1",
+            "CheckPointID": "14",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+            "groupID" : 4.0,
+        	"groupName" : "4.0 FIRE PROTECTION SYSTEM",
+            "CheckPoint": "Fire Hose Reel with cabinet \n Quantity : 1 number",
+            "CheckPointDes": "4.6 Fire Hose Reel",
+            "CheckItemID": "1",
+            "CheckPointID": "15",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+            "groupID" : 4.0,
+        	"groupName" : "4.0 FIRE PROTECTION SYSTEM",
+            "CheckPoint": "Fire Bell \n Quantity : 2 numbers",
+            "CheckPointDes": "4.7 Fire Bell",
+            "CheckItemID": "1",
+            "CheckPointID": "16",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+            "groupID" : 5.0,
+        	"groupName" : "5.0 PLUMBING AND SANITARY",
+            "CheckPoint": "Floor Drain \n Quantity : 1 lot",
+            "CheckPointDes": "5.1 Floor Drain",
+            "CheckItemID": "1",
+            "CheckPointID": "17",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+            "groupID" : 5.0,
+        	"groupName" : "5.0 PLUMBING AND SANITARY",
+            "CheckPoint": "Water Supply Pipe \n Quantity : 1 lot",
+            "CheckPointDes": "5.2 Water Supply Point",
+            "CheckItemID": "1",
+            "CheckPointID": "18",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+            "groupID" : 6.0,
+        	"groupName" : "6.0 EXTRA LOW VOLTAGE (ELV) SERVICES",
+            "CheckPoint": "Telephone lines per unit \n Quantity : 100 pairs",
+            "CheckPointDes": "6.1 Telephone Line",
+            "CheckItemID": "1",
+            "CheckPointID": "19",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        },
+        {
+            "groupID" : 6.0,
+        	"groupName" : "6.0 EXTRA LOW VOLTAGE (ELV) SERVICES",
+            "CheckPoint": "Mobile phone antennas \n Quantity : 2 numbers",
+            "CheckPointDes": "6.2 Mobile Phone Antenna",
+            "CheckItemID": "1",
+            "CheckPointID": "20",
+            "Status": "2",
+            "Creator": "huangcheng1",
+            "CreateTime": "2015/1/21 16:09:28"
+        }
+    ],
+    "rows_work": [
+        {
+            "ADAccount": "Jeffrey Ang",
+            "Remark": "Completed",
+            "UpdateTime": "2014/11/11 19:16:32"
+        }
+    ],
+    "rows_Image": [
+    ]
+}
+
+
+
+

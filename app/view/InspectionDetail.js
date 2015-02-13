@@ -36,10 +36,11 @@ Ext.define('iTenants.view.InspectionDetail', {
 				xtype: 'button',
 				itemId: 'reply',
 				ui : 'customTopBtn',
-				text: 'Reply',
+				text: 'Modify',
 				align : 'right',
 				handler: function(e) {
-					handingOverCtr.jumpToDefect();
+					//handingOverCtr.jumpToDefect();
+					handingOverCtr.showCheckListPicker(handingOverCtr.checkRecord);
 				}
 			}]
 		}]
@@ -47,6 +48,7 @@ Ext.define('iTenants.view.InspectionDetail', {
     destroyChildFn: function(){
     	var child = navCtr['InspectionDetail'].getComponent('inspectList');
     	if(child){
+    		Ext.getStore('inspectionDetailStore').removeAll();
     		child.destroy();
     	}
     }
